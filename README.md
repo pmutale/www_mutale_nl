@@ -1,2 +1,5 @@
-# www.mutale.nl
-Official website of Peter Mutale
+# Official Website: Peter Mutale
+
+Dear Public,
+
+This application is intended to be the official website of Peter Mutale
