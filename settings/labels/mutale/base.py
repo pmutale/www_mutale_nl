@@ -93,16 +93,14 @@ INSTALLED_APPS = (
     'mptt',
 
     #  Apps
-    'mysite'
+    'mysite',
+    'themes',
 )
 
 LANGUAGES = (
-    # ('en', 'English'),
-    # ('nl', 'Nederlands'),
-    # ('sw', 'Swahili'),
-    ('en', gettext('en')),
-    ('nl', gettext('nl')),
-    ('sw', gettext('sw')),
+    ('en', 'English'),
+    ('nl', 'Nederlands'),
+    ('sw', 'Swahili'),
 )
 
 CMS_LANGUAGES = {
