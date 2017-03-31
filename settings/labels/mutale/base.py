@@ -156,3 +156,5 @@ THUMBNAIL_PROCESSORS = (
 )
 
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+
+WSGI_APPLICATION = 'mysite.wsgi.application'
