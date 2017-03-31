@@ -5,7 +5,11 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['mutale.herokuapp.com']
 
+DATABASE_URL = 'postgres://oogcsuzgfwhqbc:0da4b0d51b2f508e4c00308e3c583c2dd9999b6b439a5501dcd643602b455167@ec2-54' \
+               '-247-92-185.eu-west-1.compute.amazonaws.com:5432/dmtkic08buj90'
+DATABASES = {
+    'default':
+        dj_database_url.config(default=DATABASE_URL)
+}
 
-db_from_env = dj_database_url.config(conn_max_age=500)
-
-DATABASES['default'].update(db_from_env)
+DATABASES['default']['CONN_MAX_AGE'] = 500
