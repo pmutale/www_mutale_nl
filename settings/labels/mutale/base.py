@@ -95,9 +95,12 @@ INSTALLED_APPS = (
 )
 
 LANGUAGES = (
-    ('en', 'English'),
-    ('nl', 'Nederlands'),
-    ('sw', 'Swahili'),
+    # ('en', 'English'),
+    # ('nl', 'Nederlands'),
+    # ('sw', 'Swahili'),
+    ('en', gettext('en')),
+    ('nl', gettext('nl')),
+    ('sw', gettext('sw')),
 )
 
 CMS_LANGUAGES = {
