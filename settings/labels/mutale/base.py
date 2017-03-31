@@ -58,6 +58,8 @@ MIDDLEWARE_CLASSES = (
 )
 
 INSTALLED_APPS = (
+
+    # Django
     'djangocms_admin_style',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -67,10 +69,12 @@ INSTALLED_APPS = (
     'django.contrib.sitemaps',
     'django.contrib.staticfiles',
     'django.contrib.messages',
-    'cms',
+
+    # CMS
     'menus',
     'sekizai',
     'treebeard',
+    'cms',
     'djangocms_text_ckeditor',
     'filer',
     'easy_thumbnails',
@@ -84,13 +88,16 @@ INSTALLED_APPS = (
     'djangocms_snippet',
     'djangocms_googlemap',
     'djangocms_video',
+    'mptt',
+
+    #  Apps
     'mysite'
 )
 
 LANGUAGES = (
-    ('en', gettext('en')),
-    ('nl', gettext('nl')),
-    ('sw', gettext('sw')),
+    ('en', 'English'),
+    ('nl', 'Nederlands'),
+    ('sw', 'Swahili'),
 )
 
 CMS_LANGUAGES = {
@@ -125,12 +132,12 @@ CMS_PLACEHOLDER_CONF = {}
 DATABASES = {
     'default': {
         'CONN_MAX_AGE': 0,
-        'ENGINE': 'django.db.backends.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'HOST': 'localhost',
-        'NAME': 'project.db',
-        'PASSWORD': '',
-        'PORT': '',
-        'USER': ''
+        'NAME': 'project_db',
+        'PASSWORD': 'COR',
+        'PORT': '5432',
+        'USER': 'pm'
     }
 }
 
