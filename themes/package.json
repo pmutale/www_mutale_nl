@@ -1,0 +1,16 @@
+{
+  "name": "myapp",
+  "description": "my website",
+  "version": "1.0.0",
+  "engines": {
+    "node": "7.4.0"
+  }
+}
+
+"scripts": {
+  "start": "node index.js",
+  "test": "mocha",
+  "postinstall": "bower install && grunt build"
+}
+
+
