@@ -91,4 +91,8 @@ media/
 /node_modules/
 /themes/node_modules/
 /themes/statics/raw/
-/themes/styles/bower_components/
+ssas
+static/
+mysite/static/
+oasa
+/themes/styles/
