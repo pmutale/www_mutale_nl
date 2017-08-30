@@ -11,11 +11,11 @@ __pycache__/
 env/
 build/
 develop-eggs/
-dist/
+#dist/
 downloads/
 eggs/
 .eggs/
-lib/
+#lib/
 lib64/
 parts/
 sdist/
@@ -87,5 +87,8 @@ ENV/
 # Rope project settings
 .ropeproject
 .idea/
-static/
 media/
+/node_modules/
+/themes/node_modules/
+/themes/statics/raw/
+/themes/styles/bower_components/
