@@ -90,9 +90,8 @@ ENV/
 media/
 /node_modules/
 /themes/node_modules/
-/themes/statics/raw/
-ssas
-static/
-mysite/static/
-oasa
-/themes/styles/
+#/themes/statics/raw/
+#/themes/styles/
+#/themes/raw/
+/static/
+/themes/static/styles/

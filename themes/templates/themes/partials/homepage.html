@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load cms_tags menu_tags sekizai_tags static %}
+<!doctype html>
+<html>
+<head>
+    <title>{% block title %}Home Page{% endblock title %}</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    {% render_block "css" %}
+</head>
+<body>
+
+{#{% cms_toolbar %}#}
+<div class="container">
+    {% static_placeholder 'footer' %}
+</div>
+{% render_block "js" %}
+</body>
+</html>
