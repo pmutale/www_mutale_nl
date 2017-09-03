@@ -3,6 +3,7 @@ from settings.core import *
 import psycopg2
 import urlparse
 import dj_database_url
+from django.utils.translation import ugettext_lazy as _
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
@@ -14,8 +15,14 @@ STATIC_ROOT = os.path.join(DATA_DIR, 'static')
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'mysite', 'static'),
+    os.path.join(BASE_DIR, 'themes', 'static'),
 )
 SITE_ID = 1
+
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+)
 
 TEMPLATES = [
     {
@@ -77,6 +84,7 @@ INSTALLED_APPS = (
     'sekizai',
     'treebeard',
     'cms',
+    'ckeditor',
     'djangocms_text_ckeditor',
     'filer',
     'easy_thumbnails',
@@ -93,49 +101,39 @@ INSTALLED_APPS = (
     'mptt',
 
     #  Apps
-    'mysite'
+    'mysite',
+    'themes',
 )
 
 LANGUAGES = (
-    # ('en', 'English'),
-    # ('nl', 'Nederlands'),
-    # ('sw', 'Swahili'),
-    ('en', gettext('en')),
-    ('nl', gettext('nl')),
-    ('sw', gettext('sw')),
+    ('en', 'English'),
+    ('nl', 'Nederlands'),
+    ('sw', 'Swahili'),
 )
 
 CMS_LANGUAGES = {
-    ## Customize this
     'default': {
         'public': True,
         'hide_untranslated': False,
         'redirect_on_fallback': True,
-    },
-    1: [
-        {
-            'public': True,
-            'code': 'en',
-            'hide_untranslated': False,
-            'name': gettext('en'),
-            'redirect_on_fallback': True,
-        },
-    ],
+    }
 }
 
 CMS_TEMPLATES = (
-    ## Customize this
-    ('fullwidth.html', 'Fullwidth'),
+    ('themes/partials/homepage.html', 'HomePage'),
     ('sidebar_left.html', 'Sidebar Left'),
     ('sidebar_right.html', 'Sidebar Right')
 )
 
 CMS_PERMISSION = True
 
+CKEDITOR_UPLOAD_PATH = 'content/ckeditor/uploads'
+
 CMS_PLACEHOLDER_CONF = {}
 
 DATABASE_URL = 'postgres://oogcsuzgfwhqbc:0da4b0d51b2f508e4c00308e3c583c2dd9999b6b439a5501dcd643602b455167@ec2-54' \
                '-247-92-185.eu-west-1.compute.amazonaws.com:5432/dmtkic08buj90'
+
 DATABASES = {
     'default':
         dj_database_url.config(default=DATABASE_URL)
@@ -145,12 +143,16 @@ MIGRATION_MODULES = {
 
 }
 
+# CMS_TOOLBAR_ANONYMOUS_ON = False
+
 THUMBNAIL_PROCESSORS = (
     'easy_thumbnails.processors.colorspace',
     'easy_thumbnails.processors.autocrop',
     'filer.thumbnail_processors.scale_and_crop_with_subject_location',
     'easy_thumbnails.processors.filters'
 )
+
+DATE_INPUT_FORMATS = '%Y/%m/%d'
 
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 

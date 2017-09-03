@@ -1,0 +1,15 @@
+{% load i18n cms_tags sekizai_tags static menu_tags %}
+
+<nav class="navbar navbar-toggleable-md navbar-inverse" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand text-primary" href="#">{% trans 'Start' %}</a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                <ul class="navbar-nav">
+                        {% show_menu 0 100 100 100  %}
+                </ul>
+            </div>
+        </div>
+    </nav>

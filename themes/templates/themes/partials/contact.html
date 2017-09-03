@@ -1,0 +1,23 @@
+{% load static cms_tags i18n %}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 mx-auto text-center">
+            <h2 class="section-heading">{% trans "Let's Get In Touch!" %}</h2>
+            <hr class="primary">
+            <p>{{ instance.text |safe }}</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-4 ml-auto text-center">
+            <span class="icon icon-thumbs-up"></span>
+            <p>{{ instance.number }}</p>
+        </div>
+        <div class="col-lg-4 mr-auto text-center">
+            <span class="icon icon-down-big"></span>
+            <p>
+                <a href="mailto:{{ instance.email }}">{{ instance.email }}</a>
+            </p>
+        </div>
+    </div>
+</div>
+
