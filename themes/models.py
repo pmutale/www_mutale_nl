@@ -3,7 +3,7 @@ from django.utils.translation import ugettext_lazy as _
 from cms.models import CMSPlugin
 from django.db import models
 from ckeditor.fields import RichTextField
-
+from datetime import date
 
 class Contact(CMSPlugin):
     number = models.CharField(max_length=128)
@@ -17,4 +17,4 @@ class ComingSoon(CMSPlugin):
     page_heading = models.CharField(max_length=128)
     description = RichTextField(null=True, blank=True, verbose_name=_('First Line Text'),
                                 help_text='First line text')
-
+    date = models.DateField(default=date.today())

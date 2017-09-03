@@ -19,9 +19,12 @@
 	{% placeholder "footer" %}
 {% endblock content %}
 </div>
+<script type="application/javascript" src="{% static 'themes/js/bootsrap/jquery.min.js' %}"></script>
+<script type="application/javascript" src="{% static 'themes/js/bootsrap/jquery.countdown.js' %}"></script>
+<script type="application/javascript" src="{% static 'themes/js/bootsrap/bootstrap.min.js' %}"></script>
+<script type="application/javascript" src="{% static 'themes/js/bootsrap/tether.min.js' %}"></script>
+<script type="application/javascript" src="{% static 'themes/js/countdown.js' %}"></script>
+
 {% render_block "js" %}
-<link href="{% static "themes/js/bootsrap/jquery.min.js" %}" rel="stylesheet">
-<link href="{% static "themes/js/bootsrap/bootstrap.min.js" %}" rel="stylesheet">
-<link href="{% static "themes/js/bootsrap/tether.min.js" %}" rel="stylesheet">
 </body>
 </html>

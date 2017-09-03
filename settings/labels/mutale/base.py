@@ -133,6 +133,7 @@ CMS_PLACEHOLDER_CONF = {}
 
 DATABASE_URL = 'postgres://oogcsuzgfwhqbc:0da4b0d51b2f508e4c00308e3c583c2dd9999b6b439a5501dcd643602b455167@ec2-54' \
                '-247-92-185.eu-west-1.compute.amazonaws.com:5432/dmtkic08buj90'
+
 DATABASES = {
     'default':
         dj_database_url.config(default=DATABASE_URL)
@@ -150,6 +151,8 @@ THUMBNAIL_PROCESSORS = (
     'filer.thumbnail_processors.scale_and_crop_with_subject_location',
     'easy_thumbnails.processors.filters'
 )
+
+DATE_INPUT_FORMATS = '%Y/%m/%d'
 
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 

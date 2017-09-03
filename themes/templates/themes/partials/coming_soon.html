@@ -1,30 +1,29 @@
+{% load cms_tags i18n static sekizai_tags %}
 <div class="container">
     <h1 class="page-heading">{{ instance.page_heading }}</h1>
     <p class="description">{{ instance.description|safe }}</p>
 
-    <form class="subscription-form form-inline" id="subscription-form" novalidate="">
-        {{ form  }}
-        <div class="subscription-submit-container">
-            <button class="subscription-submit btn btn-large" id="subscription-submit">SUBSCRIBE</button>
-        </div>
+    <form class="subscription-form form-inline" id="subscription-form" method="POST">
+        {% if thanks %}
+            <div id="subscribe" class="alert alert-success">
+                <p>{% trans "Thanks for your contact" %}</p>
+                <p class="icon icon-light">{% trans "You are in - An update will be coming your way " %}</p>
+            </div>
+        {% else %}
+            {% csrf_token %}
+            {% for field in form %}
+                <div class="text-danger">{{ field.errors }}</div>
+                        {{ field }}
+                    {% if field.help_text %}
+                        <p class="help">{{ field.help_text|safe }}</p>
+                    {% endif %}
+            {% endfor %}
+            <input type="submit" class="btn btn-default" value="{% trans 'Submit Details' %}">
+        {% endif %}
     </form>
-
-    <div id="countdown" class="countdown">
-        <div class="countdown-item">
-            <div class="countdown-number countdown-days">292</div>
-            <div class="countdown-text">days</div>
-        </div>
-        <div class="countdown-item">
-            <div class="countdown-number countdown-hours">15</div>
-            <div class="countdown-text">hours</div>
-        </div>
-        <div class="countdown-item">
-            <div class="countdown-number countdown-minutes">34</div>
-            <div class="countdown-text">minutes</div>
-        </div>
-        <div class="countdown-item">
-            <div class="countdown-number countdown-seconds">03</div>
-            <div class="countdown-text">seconds</div>
-        </div>
-    </div>
+    <div id="clock" class="countdown-number"></div>
 </div>
+
+{% addtoblock 'js' %}
+    <script type="application/javascript" src="{% static 'themes/js/countdown.js' %}"></script>
+{% endaddtoblock %}

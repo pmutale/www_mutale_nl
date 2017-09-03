@@ -1,6 +1,7 @@
 var gulp        = require('gulp');
 var browserSync = require('browser-sync').create();
 var sass        = require('gulp-sass');
+// var countdown = require('jquery-countdown');
 
 // Define default destination folder
 var dest = 'static/themes';
@@ -19,7 +20,9 @@ gulp.task('bootstrap-js', function() {
         [
             'node_modules/bootstrap/dist/js/bootstrap.min.js',
             'node_modules/jquery/dist/jquery.min.js',
-            'node_modules/tether/dist/js/tether.min.js'
+            'node_modules/tether/dist/js/tether.min.js',
+            'node_modules/jquery-countdown/dist/jquery.countdown.js',
+            'node_modules/jquery-countdown/src/countdown.js'
         ])
         .pipe(gulp.dest(dest + "/js/bootsrap"))
         .pipe(browserSync.stream());
