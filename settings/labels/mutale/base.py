@@ -103,6 +103,7 @@ INSTALLED_APPS = (
     #  Apps
     'mysite',
     'themes',
+    'stick2uganda',
 )
 
 LANGUAGES = (
