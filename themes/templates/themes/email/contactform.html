@@ -2,15 +2,26 @@
 <head>
     <style>
         body{
-            font-family:Helvetica, Arial, "sans serif";
+            font-family: Montserrat, "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
+            font-size: 14px;
+            line-height: 14px;
         }
     </style>
 </head>
 <body>
-<table>
+<p>{% trans 'Dear Webmaster' %}</p>
+<p>{% trans 'The following persons would like you to keep them updated on the current situation of the website' %}</p>
+<table style="background: transparent none no-repeat left top;">
     <tr>
-        <td>{% trans 'Email' %}:</td><td> {{email}}</td>
+        <td align="center">
+            {% trans 'Email' %}:
+        </td>
+        <td align="center">
+            <strong>{{email}}</strong>
+        </td>
     </tr>
 </table>
+<p><strong>{% trans 'Yours faithfuly' %}</strong></p>
+<p style="font-style: italic">{% trans 'Website Correspondent - www.mutale.nl' %}</p>
 </body>
 </html>

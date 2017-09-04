@@ -5,4 +5,3 @@ email_settings = {
     'host': 'smtp.strato.com',
     'ssl': True
 }
-
