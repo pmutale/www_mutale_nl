@@ -1,6 +1,8 @@
 from settings.labels.mutale.base import *
 import dj_database_url
 
+from themes import secrets
+
 DEBUG = True
 
 ALLOWED_HOSTS = ['mutale.herokuapp.com', '127.0.0.1', 'localhost']
@@ -14,6 +16,13 @@ DATABASES = {
 
 DATABASES['default']['CONN_MAX_AGE'] = 500
 
-EMAIL_HOST = 'smtp.strato.com'
+EMAIL_HOST = secrets.email_settings['host']
 
-EMAIL_PORT = 465
+EMAIL_PORT = secrets.email_settings['port']
+
+EMAIL_HOST_USER = secrets.email_settings['user']
+
+EMAIL_HOST_PASSWORD = secrets.email_settings['password']
+
+EMAIL_USE_SSL = secrets.email_settings['ssl']
+
