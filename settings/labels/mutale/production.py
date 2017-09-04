@@ -14,6 +14,6 @@ DATABASES = {
 
 DATABASES['default']['CONN_MAX_AGE'] = 500
 
-EMAIL_HOST = 'localhost'
+EMAIL_HOST = 'smtp.strato.com'
 
-EMAIL_PORT = 1025
+EMAIL_PORT = 465
