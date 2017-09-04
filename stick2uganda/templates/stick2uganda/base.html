@@ -2,9 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>{% trans 'Welcome' %}</title>
 </head>
 <body>
-
+<div class="jumbotron">
+    <h1 class="display-3">Stick 2 Uganda!</h1>
+    <p class="lead">{{ info }}</p>
+    <hr class="my-4">
+    <p>{{ intro_small }}.</p>
+    <p class="lead">
+        <a class="btn btn-primary btn-lg" href="{% url 'projects' %}" role="button">See Projects</a>
+    </p>
+</div>
 </body>
 </html>

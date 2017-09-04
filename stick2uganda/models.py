@@ -32,13 +32,14 @@ class Report(models.Model):
     question = models.ForeignKey('Question', on_delete=models.CASCADE)
 
     def __unicode__(self):
-        return '{}'.format(self.version)
+        return '{} completed on {}'.format(self.version, self.completed)
 
 
 class Question(models.Model):
     number = models.IntegerField(null=True, blank=True, help_text=(_('Use numbers <small>e.g</small> 1, 2 or 3')))
     question = models.CharField(max_length=128, null=True, blank=True)
     findings = models.TextField(null=True, blank=True)
+    project = models.ForeignKey('Project', on_delete=models.CASCADE, null=True)
 
     def __unicode__(self):
-        return '{}'.format(self.number)
+        return '{} for {}'.format(self.number, self.project)

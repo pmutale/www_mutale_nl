@@ -21,6 +21,7 @@ urlpatterns += i18n_patterns(
     url(r'^admin/', include(admin.site.urls)),  # NOQA
     url(r'^', include('cms.urls')),
     url(r'^ckeditor/', include('ckeditor_uploader.urls')),
+    url(r'^projects/', include('stick2uganda.urls')),
 )
 
 # This is only needed when using runserver.

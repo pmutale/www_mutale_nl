@@ -96,3 +96,4 @@ media/
 /static/
 /themes/static/styles/
 /my.cnf
+/settings/__init__.py
