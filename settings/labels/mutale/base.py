@@ -157,3 +157,7 @@ DATE_INPUT_FORMATS = '%Y/%m/%d'
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 WSGI_APPLICATION = 'mysite.wsgi.application'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+DEFAULT_FROM_EMAIL = 'webmaster@mutale.nl'

@@ -13,3 +13,7 @@ DATABASES = {
 }
 
 DATABASES['default']['CONN_MAX_AGE'] = 500
+
+EMAIL_HOST = 'localhost'
+
+EMAIL_PORT = 1025
