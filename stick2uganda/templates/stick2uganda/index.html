@@ -1,5 +1,10 @@
-{% extends 'base.html' %}
-{% load cms_tags  %}
-{% block content %}
-
-{% endblock %}
+{% load i18n static sekizai_tags %}
+<div class="jumbotron">
+    <h1 class="display-3">{% trans 'Stick 2 Uganda!' %}</h1>
+    <p class="lead">{{ instance.info|safe }}</p>
+    <hr class="my-4">
+    <p>{{ instance.intro_small }}.</p>
+    <p class="lead">
+        <a class="btn btn-primary btn-lg" href="{% url 'stick2uganda:project' %}" role="button">See Projects</a>
+    </p>
+</div>

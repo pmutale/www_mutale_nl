@@ -11,6 +11,9 @@
 </head>
 <body>
 {% cms_toolbar %}
+<div id="tray" class="topbar">
+    <div class="fill"></div>
+</div>
 <div class="container">
 {#    {% include 'themes/page_components/navbar.html' %}#}
 {% block content %}
@@ -24,7 +27,6 @@
 <script type="application/javascript" src="{% static 'themes/js/bootsrap/bootstrap.min.js' %}"></script>
 <script type="application/javascript" src="{% static 'themes/js/bootsrap/tether.min.js' %}"></script>
 <script type="application/javascript" src="{% static 'themes/js/countdown.js' %}"></script>
-
 {% render_block "js" %}
 </body>
 </html>

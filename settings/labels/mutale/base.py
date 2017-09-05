@@ -16,6 +16,7 @@ STATIC_ROOT = os.path.join(DATA_DIR, 'static')
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'mysite', 'static'),
     os.path.join(BASE_DIR, 'themes', 'static'),
+    os.path.join(BASE_DIR, 'stick2uganda', 'static'),
 )
 SITE_ID = 1
 
@@ -31,15 +32,15 @@ TEMPLATES = [
         'OPTIONS': {
             'context_processors': [
                 'django.contrib.auth.context_processors.auth',
-                'django.contrib.messages.context_processors.messages',
-                'django.template.context_processors.i18n',
                 'django.template.context_processors.debug',
-                'django.template.context_processors.request',
+                'django.template.context_processors.i18n',
                 'django.template.context_processors.media',
-                'django.template.context_processors.csrf',
-                'django.template.context_processors.tz',
-                'sekizai.context_processors.sekizai',
+                'django.template.context_processors.request',
                 'django.template.context_processors.static',
+                'django.template.context_processors.tz',
+                'django.template.context_processors.csrf',
+                'django.contrib.messages.context_processors.messages',
+                'sekizai.context_processors.sekizai',
                 'cms.context_processors.cms_settings'
             ],
             'loaders': [

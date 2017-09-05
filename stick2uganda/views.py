@@ -1,29 +1,17 @@
+from django.db.models import Count
 from django.shortcuts import render
-from django.views import View
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, ListView
 
 from stick2uganda.models import Project
 
 
-class ProjectView(TemplateView):
+class ProjectView(ListView):
     """
     Our projects in Uganda
-
     """
     model = Project
     template_name = 'stick2uganda/project.html'
 
-    def get_data(self, context):
-        return list(
-            self.model.objects.all()
-                .only('name',
-                      'location')
-                .values('name',
-                        'location')
-        )
-
-
-class IndexView(TemplateView):
-    template_name = 'stick2uganda/index.html'
-
-
+    def get_queryset(self):
+        return self.model.objects.all().annotate(number_of_reports=Count('report'),
+                                                 number_of_contacts=Count('contact'))

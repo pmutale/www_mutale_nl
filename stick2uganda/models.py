@@ -1,4 +1,7 @@
 from __future__ import unicode_literals
+
+from ckeditor.fields import RichTextField
+from cms.models import CMSPlugin
 from django.utils.translation import ugettext_lazy as _
 
 from django.db import models
@@ -6,11 +9,12 @@ from django.db import models
 
 class Project(models.Model):
     name = models.CharField(max_length=128, null=False)
+    project_summary = RichTextField(null=True, blank=True)
     location = models.CharField(max_length=128, null=False)
     start_implementation = models.DateField(null=True, blank=True)
     end_implementation = models.DateField(null=True, blank=True)
-    contact = models.ForeignKey('ContactPerson', on_delete=models.CASCADE)
-    report = models.ForeignKey('Report', on_delete=models.CASCADE)
+    contact = models.ForeignKey('ContactPerson', on_delete=models.CASCADE, related_name='contacts')
+    report = models.ForeignKey('Report', on_delete=models.CASCADE, related_name='reports')
 
     def __unicode__(self):
         return '{} in {}'.format(self.name, self.location)
@@ -43,3 +47,13 @@ class Question(models.Model):
 
     def __unicode__(self):
         return '{} for {}'.format(self.number, self.project)
+
+
+class Stick2UgandaPlugin(CMSPlugin):
+    stick2uganda = models.ForeignKey('Project')
+    info = RichTextField(null=True, blank=True)
+    intro_small = models.CharField(max_length=128, null=True, blank=True)
+
+    def __unicode__(self):
+        return self.stick2uganda.name
+

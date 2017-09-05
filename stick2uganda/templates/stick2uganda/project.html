@@ -1,17 +1,29 @@
-{% load static sekizai_tags cms_tags %}
-<ul class="list-group">
-        <li class="list-group-item justify-content-between">
-            Cras justo odio
-            <span class="badge badge-default badge-pill">14</span>
-        </li>
-</ul>
-<div class="list-group">
-    <a href="#" class="list-group-item list-group-item-action flex-column align-items-start active">
-        <div class="d-flex w-100 justify-content-between">
-            <h5 class="mb-1">List group item heading</h5>
-            <small>3 days ago</small>
+{% extends 'base.html' %}
+{% load i18n static sekizai_tags cms_tags %}
+
+{% block content %}
+    {% for project in object_list %}
+        <ul class="list-group">
+            <li class="list-group-item justify-content-between">
+               {% trans 'Project' %}:  {{ project.name }}
+                <span class="badge badge-default badge-pill">{% trans 'Reports' %}: {{ project.number_of_reports }}</span>
+            </li>
+        </ul>
+        <div class="list-group">
+            <a href="#" class="list-group-item list-group-item-action flex-column align-items-start active">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">{{ project.location }}</h5>
+                    <small>{{ project.contact.name }}</small>
+                </div>
+                <p class="mb-1">{{ project.project_summary|safe }}</p>
+                <small>
+                    {% trans 'This project has' %}<strong> {{ project.number_of_contacts }} </strong>{% trans 'contact' %}
+                    &nbsp; <span class="badge badge-default">
+                           {{ project.start_implementation }} - {{ project.end_implementation }}
+                    </span>
+                </small>
+            </a>
         </div>
-        <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-        <small>Donec id elit non mi porta.</small>
-    </a>
-</div>
+        <hr> </hr>
+    {% endfor %}
+{% endblock content %}

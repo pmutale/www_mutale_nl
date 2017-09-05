@@ -1,18 +1,15 @@
 from django.conf.urls import url
 
+from . import views
 from .views import (
     ProjectView,
-    IndexView,
-    # PublisherList,
 )
 
-__all__ = ('urlpatterns',)
+# __all__ = ('urlpatterns',)
 
+app_name = 'stick2uganda'
 
 urlpatterns = [
-    url(r'^$', IndexView.as_view(), name='index'),
-    url(r'^project/$', ProjectView.as_view(), name='projects'),
-    # Publishers list
-    # url(r'^add-report/$', PublisherList.as_view(), name='exercises.publishers'),
+    url(r'^$', ProjectView.as_view(), name='project'),
 
 ]
