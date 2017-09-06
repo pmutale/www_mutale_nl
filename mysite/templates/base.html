@@ -15,6 +15,11 @@
     <div class="fill"></div>
 </div>
 <div class="container">
+{% block navbar %}
+    Here comes the navigation bar
+{% endblock %}
+
+<hr>
 {#    {% include 'themes/page_components/navbar.html' %}#}
 {% block content %}
 	{% placeholder "header" %}

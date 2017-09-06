@@ -273,7 +273,7 @@ body {
   font-weight: normal;
   line-height: 1.5;
   color: #292b2c;
-  background-color: #85a094; }
+  background-color: transparent; }
 
 [tabindex="-1"]:focus {
   outline: none !important; }
@@ -1382,7 +1382,7 @@ pre {
   .table tbody + tbody {
     border-top: 2px solid #eceeef; }
   .table .table {
-    background-color: #85a094; }
+    background-color: transparent; }
 
 .table-sm th,
 .table-sm td {
@@ -1472,7 +1472,7 @@ pre {
   .table-inverse th,
   .table-inverse td,
   .table-inverse thead th {
-    border-color: #85a094; }
+    border-color: transparent; }
   .table-inverse.table-bordered {
     border: 0; }
 
@@ -4016,7 +4016,7 @@ button.close {
   vertical-align: text-top !important; }
 
 .bg-faded {
-  background-color: #7c998c; }
+  background-color: transparent; }
 
 .bg-primary {
   background-color: white !important; }

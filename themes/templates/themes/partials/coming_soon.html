@@ -23,7 +23,9 @@
     </form>
     <div id="clock" class="countdown-number"></div>
 </div>
-
+{% addtoblock 'css' %}
+    <link href="{% static 'themes/css/bootstrap/coming-soon.css' %}" rel="stylesheet">
+{% endaddtoblock %}
 {% addtoblock 'js' %}
     <script type="application/javascript" src="{% static 'themes/js/countdown.js' %}"></script>
 {% endaddtoblock %}

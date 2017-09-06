@@ -1,18 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>{% trans 'Welcome' %}</title>
-</head>
-<body>
-<div class="jumbotron">
-    <h1 class="display-3">Stick 2 Uganda!</h1>
-    <p class="lead">{{ info }}</p>
-    <hr class="my-4">
-    <p>{{ intro_small }}.</p>
-    <p class="lead">
-        <a class="btn btn-primary btn-lg" href="{% url 'projects' %}" role="button">See Projects</a>
-    </p>
-</div>
-</body>
-</html>
+{% extends 'base.html' %}
+{% load sekizai_tags i18n %}
+
+{% block navbar %}
+    {% include 'stick2uganda/navbar/navbar.html' %}
+{% endblock %}
+
+{% block content %}
+
+{% endblock %}

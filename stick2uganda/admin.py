@@ -8,14 +8,6 @@ class ProjectAdmin(admin.ModelAdmin):
         (None, {
             'fields': ('name', 'location', 'start_implementation', 'end_implementation', 'project_summary')
         }),
-        ('Contact:', {
-            'classes': ('collapse',),
-            'fields': ('contact', )
-        }),
-        ('Reports:', {
-            'classes': ('collapse',),
-            'fields': ('report', )
-        })
     )
 
 admin.site.register(Project, ProjectAdmin)
