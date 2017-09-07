@@ -6,4 +6,4 @@ def contact(request):
     context = {
 
     }
-    render(request, template_name, context)
+    render(template_name, context)
