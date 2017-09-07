@@ -55,11 +55,15 @@
                     </cite>
                 </span>
                 <ol class="hidden"></ol>
-               <hr>
+                <hr>
             {% endfor %}
         </div>
         <div class="card-footer text-muted">
-            {% trans 'There are' %} <strong>{{ object.projects_report.count }}</strong> {% trans 'reports available' %}
+            {% blocktrans count num_reports=object.projects_report.count  %}
+                There is <strong>only 1</strong> report available
+            {% plural %}
+                There are <strong>{{ num_reports }}</strong> reports available
+            {% endblocktrans %}
         </div>
     </div>
 {% endblock %}

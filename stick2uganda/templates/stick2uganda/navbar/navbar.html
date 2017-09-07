@@ -1,6 +1,9 @@
 <nav class="nav nav-pills flex-column flex-sm-row">
-  <a class="flex-sm-fill text-sm-center nav-link active" href="{% url 'stick2uganda:project' %}">Projects</a>
-  <a class="flex-sm-fill text-sm-center nav-link" href="{% url 'stick2uganda:add-question' %}">Add Findings</a>
-  <a class="flex-sm-fill text-sm-center nav-link" href="{% url 'stick2uganda:add_findings' %}">Add Reports </a>
-  <a class="flex-sm-fill text-sm-center nav-link disabled" href="#">Disabled</a>
+  <a class="flex-sm-fill text-sm-center nav-link"
+     href="{% url 'stick2uganda:project' %}">Projects</a>
+  <a class="flex-sm-fill text-sm-center nav-link {% if '/add-question' in request.path %} active {% endif %}"
+     href="{% url 'stick2uganda:add-question' %}">Add Findings</a>
+  <a class="flex-sm-fill text-sm-center nav-link {% if '/add-report' in request.path %} active {% endif %}"
+     href="{% url 'stick2uganda:add_findings' %}">Add Reports </a>
+  <a class="flex-sm-fill text-sm-center nav-link disabled" href="#">Coming</a>
 </nav>

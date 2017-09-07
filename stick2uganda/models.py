@@ -35,6 +35,11 @@ class Report(models.Model):
     question = models.ForeignKey('Question', on_delete=models.CASCADE, related_name='questions')
     project = models.ForeignKey('Project', on_delete=models.CASCADE, null=True, related_name='projects_report')
 
+    class Meta:
+        permissions = (
+            ('can_add_report', 'Can add Rreport'),
+            ('can_edit_report', 'Can edit Report')
+        )
 
     def __unicode__(self):
         return '{} completed on {}'.format(self.version, self.completed)
@@ -46,8 +51,15 @@ class Question(models.Model):
     findings = models.TextField(null=True, blank=True)
     project = models.ForeignKey('Project', on_delete=models.CASCADE, null=True, related_name='projects_question')
 
+    class Meta:
+        permissions = (
+            ('can_add_question', 'Can add Question'),
+            ('can_edit_question', 'Can edit Question')
+        )
+
     def __unicode__(self):
         return '{} for {}'.format(self.number, self.project)
+
 
 
 class Stick2UgandaPlugin(CMSPlugin):

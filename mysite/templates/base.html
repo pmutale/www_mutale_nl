@@ -2,7 +2,7 @@
 <!doctype html>
 <html>
 <head>
-    <title>{% block title %}This is my new project home page{% endblock title %}</title>
+    <title>{% block title %}Welcome to Mutale Peter's website{% endblock title %}</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     {% render_block "css" %}
     <link href="https://fonts.googleapis.com/css?family=Lato:300|Pacifico|Quicksand" rel="stylesheet">
@@ -10,22 +10,24 @@
     <link href="{% static "themes/css/bootstrap/styles.css" %}" rel="stylesheet">
 </head>
 <body>
+{#{% if user.is_superuser %}#}
 {% cms_toolbar %}
+{#{% endif %}#}
 <div id="tray" class="topbar">
-    <div class="fill"></div>
+    <div class="fill"><span class="text text-info"></span></div>
 </div>
 <div class="container">
-{% block navbar %}
-    Here comes the navigation bar
-{% endblock %}
+    {% block navbar %}
+        Here comes the navigation bar
+    {% endblock %}
 
-<hr>
-{#    {% include 'themes/page_components/navbar.html' %}#}
-{% block content %}
-	{% placeholder "header" %}
-	{% placeholder "content" %}
-	{% placeholder "footer" %}
-{% endblock content %}
+    <hr>
+    {#    {% include 'themes/page_components/navbar.html' %}#}
+    {% block content %}
+        {% placeholder "header" %}
+        {% placeholder "content" %}
+        {% placeholder "footer" %}
+    {% endblock content %}
 </div>
 <script type="application/javascript" src="{% static 'themes/js/bootsrap/jquery.min.js' %}"></script>
 <script type="application/javascript" src="{% static 'themes/js/bootsrap/jquery.countdown.js' %}"></script>

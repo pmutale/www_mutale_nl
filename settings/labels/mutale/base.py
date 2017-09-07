@@ -84,6 +84,7 @@ INSTALLED_APPS = (
     'menus',
     'sekizai',
     'treebeard',
+    'registration',
     'cms',
     'ckeditor',
     'djangocms_text_ckeditor',
@@ -163,3 +164,8 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 DEFAULT_FROM_EMAIL = 'webmaster@mutale.nl'
+
+LOGIN_URL = '/accounts/login/'
+
+AUTH_USER_MODEL = 'registration.User'
+
