@@ -14,17 +14,3 @@
     font-weight: bold;
   }
 }
-
-.topbar {
-  height: 3em;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 10000;
-  overflow: visible;
-  margin-bottom: 3em;
-  & .fill {
-    background: #434343 repeat-x;
-    height: 3em;
-  }
-}

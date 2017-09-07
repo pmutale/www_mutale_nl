@@ -3,7 +3,7 @@ import dj_database_url
 
 from themes import secrets
 
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['mutale.herokuapp.com', '127.0.0.1', 'localhost']
 
