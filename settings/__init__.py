@@ -1,1 +1,1 @@
-from settings.labels.mutale.production import *
+from settings.labels.mutale.development import *
