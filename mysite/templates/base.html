@@ -1,4 +1,4 @@
-{% load cms_tags menu_tags sekizai_tags static i18n %}
+{% load cms_tags menu_tags sekizai_tags static staticfiles i18n %}
 <!doctype html>
 <html>
 <head>
@@ -6,13 +6,12 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     {% render_block "css" %}
     <link href="https://fonts.googleapis.com/css?family=Lato:300|Pacifico|Quicksand" rel="stylesheet">
+    <link rel='stylesheet' href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="{% static "themes/css/bootstrap/bootstrap.css" %}" rel="stylesheet">
     <link href="{% static "themes/css/bootstrap/styles.css" %}" rel="stylesheet">
 </head>
 <body>
-{#{% if user.is_superuser %}#}
 {% cms_toolbar %}
-{#{% endif %}#}
 <div id="tray" class="topbar">
     <div class="fill"><span class="text text-info"></span></div>
 </div>
@@ -22,18 +21,18 @@
     {% endblock %}
 
     <hr>
-    {#    {% include 'themes/page_components/navbar.html' %}#}
     {% block content %}
         {% placeholder "header" %}
         {% placeholder "content" %}
         {% placeholder "footer" %}
     {% endblock content %}
 </div>
+<script type="application/javascript" src="{% static 'themes/js/bootsrap/popper.min.js' %}"></script>
+<script type="application/javascript" src="{% static 'themes/js/bootsrap/jquery.slim.min.js' %}"></script>
 <script type="application/javascript" src="{% static 'themes/js/bootsrap/jquery.min.js' %}"></script>
+<script type="application/javascript" src="{% static 'themes/js/bootsrap/tether.min.js' %}"></script>
 <script type="application/javascript" src="{% static 'themes/js/bootsrap/jquery.countdown.js' %}"></script>
 <script type="application/javascript" src="{% static 'themes/js/bootsrap/bootstrap.min.js' %}"></script>
-<script type="application/javascript" src="{% static 'themes/js/bootsrap/tether.min.js' %}"></script>
-<script type="application/javascript" src="{% static 'themes/js/countdown.js' %}"></script>
 {% render_block "js" %}
 </body>
 </html>
