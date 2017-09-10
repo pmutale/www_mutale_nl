@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css?family=Kreon);
 // Colors
 $green:  white;
 
@@ -5,8 +6,12 @@ $green:  white;
 $brand-primary:             $green;
 
 //Font Family
-$font-family-sans-serif: "Quicksand", Roboto, "Helvetica Neue", "Lato" Arial, sans-serif !important;
+$font-family-sans-serif: "Quicksand", Roboto, "Helvetica Neue", "Lato" Arial, sans-serif !default;
 
 // Background
 //$body-bg: #1a1b1d;
 $body-bg: transparent;
+
+body {
+
+}
