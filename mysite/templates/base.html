@@ -5,9 +5,8 @@
     <title>{% block title %}Welcome to Mutale Peter's website{% endblock title %}</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel='stylesheet' href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    {% if GOOGLE_ANALYTICS_PROPERTY %}
-        {% include 'themes/page_components/google_analytics.html' %}
-    {% endif %}
+    {% include 'themes/page_components/google_analytics.html' %}
+    {{ GOOGLE_ANALYTICS_PROPERTY }}
     {% render_block "css" %}
     <link href="https://fonts.googleapis.com/css?family=Lato:300|Pacifico|Quicksand" rel="stylesheet">
     <link href="{% static "themes/css/bootstrap/bootstrap.css" %}" rel="stylesheet">
