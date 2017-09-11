@@ -15,3 +15,6 @@ def google_analytics(request):
             'GOOGLE_ANALYTICS_PROPERTY_ID': ga_prop_id,
             'GOOGLE_ANALYTICS_DOMAIN': ga_domain
         }
+    else:
+        return ''
+
