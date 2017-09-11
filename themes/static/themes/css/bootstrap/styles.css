@@ -1,0 +1,37 @@
+/*
+    Parts
+=================================================================*/
+@import url("https://fonts.googleapis.com/css?family=Julius+Sans+One|Kanit");
+.navbar {
+  width: 100%;
+  background: none; }
+  @media (max-width: 34em) {
+    .navbar {
+      background: transparent; } }
+  .navbar .navbar-toggler {
+    cursor: pointer;
+    outline: 0; }
+  .navbar .nav-link {
+    text-transform: uppercase;
+    font-weight: bold; }
+
+.topbar {
+  height: 3em;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10000;
+  overflow: visible;
+  margin-bottom: 3em; }
+  .topbar .fill {
+    background: #434343 repeat-x;
+    height: 3em; }
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  body h4 {
+    font-family: "Kanit", sans-serif;
+    color: darkslategray; }
+  body h3 {
+    font-family: "Julius Sans One", sans-serif;
+    color: darkslategray; }

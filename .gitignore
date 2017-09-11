@@ -97,8 +97,8 @@ media/
 /themes/static/styles/
 /my.cnf
 /settings/__init__.py
-/themes/static/themes/css/
-/themes/static/themes/js/
+#/themes/static/themes/css/
+#/themes/static/themes/js/
 /.env
 /themes/themes/
 /themes/etc/
