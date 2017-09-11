@@ -14,9 +14,7 @@ MEDIA_ROOT = os.path.join(DATA_DIR, 'media')
 STATIC_ROOT = os.path.join(DATA_DIR, 'static')
 
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'mysite', 'static'),
-    os.path.join(BASE_DIR, 'themes', 'static'),
-    os.path.join(BASE_DIR, 'stick2uganda', 'static'),
+    os.path.join(BASE_DIR, 'static'),
 )
 SITE_ID = 1
 
