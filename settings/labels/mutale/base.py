@@ -10,8 +10,7 @@ from django.utils.translation import ugettext_lazy as _
 
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(DATA_DIR, 'media')
-STATIC_ROOT = os.path.join(DATA_DIR, 'static')
+
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'themes', 'static'),
@@ -175,3 +174,6 @@ GOOGLE_ANALYTICS_PROPERTY_ID = 'UA-63318042-1'
 
 GOOGLE_ANALYTICS_DOMAIN = 'mutale.nl'
 
+MEDIA_ROOT = os.path.join(DATA_DIR, 'media')
+
+STATIC_ROOT = os.path.join(DATA_DIR, 'static')
