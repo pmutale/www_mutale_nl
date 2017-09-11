@@ -34,3 +34,6 @@ if settings.DEBUG:
         url(r'^media/(?P<path>.*)$', serve,
             {'document_root': settings.MEDIA_ROOT, 'show_indexes': True}),
         ] + staticfiles_urlpatterns() + urlpatterns
+
+handler404 = 'themes.views.handler404'
+handler500 = 'themes.views.handler500'
