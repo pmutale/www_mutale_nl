@@ -1,0 +1,30 @@
+.navbar {
+  width: 100%;
+  background: none;
+  @media (max-width:34em) {
+    background: transparent;
+  }
+
+  .navbar-toggler {
+    cursor: pointer;
+    outline: 0;
+  }
+  .nav-link {
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+}
+
+.topbar {
+  height: 3em;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10000;
+  overflow: visible;
+  margin-bottom: 3em;
+  & .fill {
+    background: #434343 repeat-x;
+    height: 3em;
+  }
+}

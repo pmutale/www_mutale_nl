@@ -93,7 +93,7 @@ media/
 #/themes/statics/raw/
 #/themes/styles/
 #/themes/raw/
-/static/
+#/static/
 /themes/static/styles/
 /my.cnf
 /settings/__init__.py
