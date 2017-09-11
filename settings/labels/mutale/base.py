@@ -167,5 +167,7 @@ DEFAULT_FROM_EMAIL = 'webmaster@mutale.nl'
 
 LOGIN_URL = '/accounts/login/'
 
+LOGIN_REDIRECT_URL = '/project/'
+
 AUTH_USER_MODEL = 'registration.User'
 
