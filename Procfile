@@ -1,4 +1,4 @@
 web: gunicorn mysite.wsgi --log-file -
 release: python manage.py collectstatic -v0 --noinput
 release: python manage.py migrate
-worker: node NODE_ENV=production npm --prefix ./themes/ install
+worker:  npm --prefix ./themes/ install
