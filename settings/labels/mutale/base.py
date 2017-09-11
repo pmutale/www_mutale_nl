@@ -15,6 +15,7 @@ MEDIA_URL = '/media/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'themes', 'static'),
 )
+
 SITE_ID = 1
 
 STATICFILES_FINDERS = (
@@ -174,6 +175,6 @@ GOOGLE_ANALYTICS_PROPERTY_ID = 'UA-63318042-1'
 
 GOOGLE_ANALYTICS_DOMAIN = 'mutale.nl'
 
-MEDIA_ROOT = os.path.join(DATA_DIR, 'media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-STATIC_ROOT = os.path.join(DATA_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
