@@ -7,7 +7,7 @@
     <div class="alert alert-info" role="alert">
         {% if user.is_authenticated %}
             <strong>{% trans 'Welcome' %}, </strong> {{ user.username  }} {{ user.email }}
-            <a class="text-right" href="{% url 'logout' %}"> Logout </a>
+            <a href="{% url 'logout' %}?next=/accounts/login"> Logout</a>
         {% else %}
             <a href="{% url 'login' %}"> Login </a>
         {% endif %}
