@@ -29,13 +29,13 @@ TEMPLATES = [
         'DIRS': [os.path.join(BASE_DIR, 'mysite', 'templates'), ],
         'OPTIONS': {
             'context_processors': [
+                'mysite.context_processors.google_analytics',
                 'django.contrib.auth.context_processors.auth',
                 'django.template.context_processors.debug',
                 'django.template.context_processors.i18n',
                 'django.template.context_processors.media',
                 'django.template.context_processors.request',
                 'django.template.context_processors.static',
-                'mysite.context_processors.google_analytics',
                 'django.template.context_processors.tz',
                 'django.template.context_processors.csrf',
                 'django.contrib.messages.context_processors.messages',
