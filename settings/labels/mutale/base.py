@@ -37,6 +37,7 @@ TEMPLATES = [
                 'django.template.context_processors.media',
                 'django.template.context_processors.request',
                 'django.template.context_processors.static',
+                'mysite.context_processors.google_analytics',
                 'django.template.context_processors.tz',
                 'django.template.context_processors.csrf',
                 'django.contrib.messages.context_processors.messages',
@@ -168,4 +169,8 @@ DEFAULT_FROM_EMAIL = 'webmaster@mutale.nl'
 LOGIN_URL = '/accounts/login/'
 
 AUTH_USER_MODEL = 'registration.User'
+
+GOOGLE_ANALYTICS_PROPERTY_ID = 'UA-63318042-1'
+
+GOOGLE_ANALYTICS_DOMAIN = 'mutale.nl'
 
