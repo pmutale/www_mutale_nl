@@ -9,7 +9,7 @@
                 <span class="badge badge-default">
                     {% blocktrans count num_reports=project.projects_report.count %}
                         Report: {{ num_reports }}
-                        {% plural %}
+                    {% plural %}
                         Reports: {{ num_reports }}
                     {% endblocktrans %}
                 </span>
@@ -25,7 +25,7 @@
                 <small>
                     {% blocktrans count num_contacts=project.projects_contact.count %}
                         This project has <strong> only {{ num_contacts }} </strong> contact
-                        {% plural %}
+                    {% plural %}
                         There are <strong> {{ num_contacts }} </strong> contacts for this project
                     {% endblocktrans %}
                     <span class="badge badge-default">

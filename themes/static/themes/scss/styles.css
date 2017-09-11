@@ -1,6 +1,7 @@
 /*
     Parts
 =================================================================*/
+@import url("https://fonts.googleapis.com/css?family=Julius+Sans+One|Kanit");
 .navbar {
   width: 100%;
   background: none; }
@@ -25,3 +26,14 @@
   .topbar .fill {
     background: #434343 repeat-x;
     height: 3em; }
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  body h4 {
+    font-family: "Kanit", sans-serif;
+    color: darkslategray; }
+  body h3 {
+    font-family: "Julius Sans One", sans-serif;
+    color: darkslategray; }
+
+/*# sourceMappingURL=styles.css.map */
