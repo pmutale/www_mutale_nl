@@ -11,27 +11,46 @@
         </div>
     </div>
     {#    Contacts     #}
-    <div class="card">
-        <div class="card-header">
-            {% trans 'Contacts' %}
-        </div>
-        <div class="card-block">
-            <blockquote class="card-blockquote">
-                {% for a in object.projects_contact.all %}
-                    <p>{{ a.name }}</p>
-                    <p>{{ a.telephone }}</p>
-                    <p>{{ a.email }}</p>
-                    <hr>
-                {% endfor %}
-                <footer>{{ object.start_implementation }} <cite title="Source Title">{% trans 'to' %}{{ object.end_implementation }}</cite></footer>
-            </blockquote>
-        </div>
+    <div class="row">
+        {% for contact in object.projects_contact.all %}
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>
+                            <i class="fa fa-address-card" aria-hidden="true">
+                            </i> {% trans 'Contacts' %}
+                        </h4>
+                    </div>
+                    <div class="card-block">
+                        <blockquote>
+                            <h3 class="card-title">{{ contact.name }}</h3>
+                            <p class="card-text">
+
+                            <address>
+                                <a href="{{ contact.email }}">{{ contact.email }}</a><br>
+                                <abbr title="Phone">P:</abbr> {{ contact.telephone }}
+                            </address>
+                            <footer>
+                                <small>Project Manager,
+                                    <cite title="Source Title">
+                                        <strong> {% trans 'Project' %}:  {{ contact.project }}</strong>
+                                    </cite>
+                                </small>
+                            </footer>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
     </div>
     <ol class="hidden"></ol>
     {#  Reports      #}
     <div class="card text-left">
         <div class="card-header">
-            {% trans 'Reports' %}
+            <h4>
+                <i class="fa fa-paperclip" aria-hidden="true"> </i>
+                {% trans 'Reports' %}
+            </h4>
         </div>
         <div class="card-block">
             {% for report in object.projects_report.all %}
