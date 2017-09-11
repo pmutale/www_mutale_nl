@@ -4,9 +4,9 @@
   "description": "This is the website of Familie Mutale",
   "main": "gulpfile.js",
   "scripts": {
-    "start": "npm --prefix ./themes/ install",
+    "start": "npm install",
     "test": "echo \"Error: ---> No test specified \" && exit 1",
-    "preinstall": "npm --prefix ./themes/ install",
+    "preinstall": "npm install",
     "postinstall": "gulp production"
   },
   "repository": {
