@@ -1,5 +1,5 @@
 from settings.labels.mutale.base import *
-from settings.imprint import SITE_IMPRINT_PRD as SITE_IMPRINT
+# from settings.imprint import SITE_IMPRINT_PRD as SITE_IMPRINT
 import dj_database_url
 from themes import secrets
 
