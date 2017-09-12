@@ -20,16 +20,16 @@ urlpatterns = [
 ]
 
 urlpatterns += i18n_patterns(
-    url(r'^admin/', include(admin.site.urls)),  # NOQA
-    url(r'^ckeditor/', include('ckeditor_uploader.urls')),
-    url(r'^project/', include('stick2uganda.urls')),
+    url(r'^admin/', include(admin.site.urls), name='admin'),  # NOQA
+    url(r'^ckeditor/', include('ckeditor_uploader.urls'), name='ckeditor'),
+    url(r'^project/', include('stick2uganda.urls'), name='projects'),
     # url(r'^accounts/login/', include('registration.urls')),
-    url('^accounts/', include('django.contrib.auth.urls')),
-    url(r'^', include('cms.urls'))  # Leave as Last
+    url('^accounts/', include('django.contrib.auth.urls'), name='accounts'),
+    url(r'^', include('cms.urls'), name='cms')  # Leave as Last
 )
 
 # This is only needed when using runserver.
-if settings.DEBUG:
+if not settings.DEBUG:
     urlpatterns = [
         url(r'^media/(?P<path>.*)$', serve,
             {'document_root': settings.MEDIA_ROOT, 'show_indexes': True}),

@@ -61,7 +61,6 @@ class Question(models.Model):
         return '{} for {}'.format(self.number, self.project)
 
 
-
 class Stick2UgandaPlugin(CMSPlugin):
     info = RichTextField(null=True, blank=True)
     intro_small = models.CharField(max_length=128, null=True, blank=True)
