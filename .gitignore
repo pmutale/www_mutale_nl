@@ -102,3 +102,4 @@ media/
 /.env
 /themes/themes/
 /themes/etc/
+/static/
