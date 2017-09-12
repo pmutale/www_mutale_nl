@@ -26,7 +26,6 @@
     "browser-sync": "^2.18.13",
     "gulp": "^3.9.1",
     "gulp-sass": "^3.1.0",
-    "foreman": "git+https://github.com/heroku/node-foreman.git",
     "jquery": "^3.2.1",
     "jquery-countdown": "^2.2.0",
     "popper.js": "^1.12.5",
