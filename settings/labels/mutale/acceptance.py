@@ -4,8 +4,12 @@ from themes import secrets
 
 ALLOWED_HOSTS = ['mutale-acc.herokuapp.com', 'mutale-prd.herokuapp.com', '127.0.0.1', 'localhost']
 
-DATABASE_URL = 'postgres://tchjvyogxumkol:101b8068787cea9f1eb05f0f20abeefe3cf4b5797ccd12f96d5abb8ab3d9d1cb@ec2-79-125' \
-               '-26-23.eu-west-1.compute.amazonaws.com:5432/d3dpa9mm8f5aut'
+# DATABASE_URL = 'postgres://tchjvyogxumkol:101b8068787cea9f1eb05f0f20abeefe3cf4b5797ccd12f96d5abb8ab3d9d1cb@ec2-79-125' \
+#                '-26-23.eu-west-1.compute.amazonaws.com:5432/d3dpa9mm8f5aut'
+
+DATABASE_URL = 'postgres://oogcsuzgfwhqbc:0da4b0d51b2f508e4c00308e3c583c2dd9999b6b439a5501dcd643602b455167@ec2-54' \
+              '-247-92-185.eu-west-1.compute.amazonaws.com:5432/dmtkic08buj90'
+
 DEBUG = False
 
 DATABASES = {
