@@ -16,5 +16,9 @@ def google_analytics(request):
             'GOOGLE_ANALYTICS_DOMAIN': ga_domain
         }
     elif settings.DEBUG:
-        return 'Development'
+
+        return {
+            'GOOGLE_ANALYTICS_PROPERTY_ID': 'development-mode',
+            'GOOGLE_ANALYTICS_DOMAIN': 'auto',
+                }
 
