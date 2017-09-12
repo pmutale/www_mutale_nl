@@ -6,7 +6,6 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "npm install --production",
-    "preinstall": "python manage.py migrate",
     "postinstall": " gulp production && python manage.py collectstatic -v0 --noinput"
   },
   "repository": {
@@ -20,8 +19,7 @@
   },
   "homepage": "https://github.com/pmutale/www.mutale.nl#readme",
   "devDependencies": {
-    "underscore": "^1.8.3",
-    "foreman": "git+https://github.com/heroku/node-foreman.git"
+    "underscore": "^1.8.3"
   },
   "dependencies": {
     "bootstrap": "^4.0.0-beta",
