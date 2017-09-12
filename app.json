@@ -1,0 +1,42 @@
+{
+  "name": "www.mutale.nl",
+  "description": "The official website of Mutale Familie",
+  "scripts": {
+    "postdeploy": "npm start",
+    "pr-predestroy": "gulp production"
+  },
+  "env": {
+    "BUILDPACK_URL": {
+      "required": true
+    },
+    "DEBUG_COLLECTSTATIC": {
+      "required": true
+    },
+    "DISABLE_COLLECTSTATIC": {
+      "required": true
+    },
+    "ENABLE_COLLECTSTATIC": {
+      "required": true
+    },
+    "HEROKU_POSTGRESQL_PURPLE_URL": {
+      "required": true
+    },
+    "NODE_ENV": {
+      "required": true
+    }
+  },
+  "formation": {
+  },
+  "addons": [
+    "heroku-postgresql",
+    "heroku-postgresql"
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/python"
+    },
+    {
+      "url": "heroku/nodejs"
+    }
+  ]
+}
