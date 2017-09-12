@@ -8,7 +8,14 @@ var dest = 'static/themes';
 
 // Compile sass into CSS & auto-inject into browsers
 gulp.task('bootstrap-css', function() {
-    return gulp.src(['node_modules/bootstrap/scss/bootstrap.scss', dest +'/scss/*.scss'])
+    return gulp.src(
+        [
+            'node_modules/bootstrap/scss/bootstrap.scss',
+            'themes/static/themes/scss/*.scss',
+            'themes/static/themes/default/*.scss',
+            dest +'/scss/*.scss'
+        ]
+    )
         .pipe(sass())
         .pipe(gulp.dest(dest + "/css/bootstrap"))
         .pipe(browserSync.stream());
@@ -29,8 +36,17 @@ gulp.task('bootstrap-js', function() {
         .pipe(browserSync.stream());
 });
 
+gulp.task('images', function(){
+    return gulp.src(
+        [
+            'themes/static/themes/img/**/*.+(png|jpg|jpeg|gif|svg)'
+        ]
+    )
+        .pipe(gulp.dest("media/themes/img"))
+});
+
 // Static Server + watching scss/html files
-gulp.task('serve', ['bootstrap-css'], function() {
+gulp.task('serve', ['bootstrap-css', 'images'], function() {
 
     browserSync.init({
         server: './' + dest + '/scss'
@@ -48,4 +64,4 @@ gulp.task('serve', ['bootstrap-css'], function() {
 });
 
 gulp.task('default', ['bootstrap-js','serve']);
-gulp.task('production', ['bootstrap-js','bootstrap-css']);
+gulp.task('production', ['bootstrap-js','bootstrap-css', 'images']);
