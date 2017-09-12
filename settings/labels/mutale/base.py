@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
 from settings.core import *
-import psycopg2
-import urlparse
 import dj_database_url
 from django.utils.translation import ugettext_lazy as _
 
@@ -159,7 +157,7 @@ DATE_INPUT_FORMATS = '%Y/%m/%d'
 
 # STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
-STATICFILESTORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
+STATICFILESTORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 WSGI_APPLICATION = 'mysite.wsgi.application'
 
