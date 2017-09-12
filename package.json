@@ -20,7 +20,7 @@
   "homepage": "https://github.com/pmutale/www.mutale.nl#readme",
   "devDependencies": {
     "underscore": "^1.8.3",
-    "foreman": "2.0.0"
+    "foreman": "git+https://github.com/heroku/node-foreman.git"
   },
   "dependencies": {
     "bootstrap": "^4.0.0-alpha.6",
