@@ -5,7 +5,7 @@
   "main": "./themes/gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npm install",
+    "start": "npm install --no-optional",
     "postinstall": " gulp production && python manage.py collectstatic -v0 --noinput"
   },
   "repository": {
