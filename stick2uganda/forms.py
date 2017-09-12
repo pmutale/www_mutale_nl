@@ -17,7 +17,8 @@ QuestionFormset = modelformset_factory(Question, extra=0, fields=('number', 'pro
                                                                         'readonly': 'readonly'}),
                                            'project': Select(attrs={'class': 'form-control-static',
                                                                     'readonly': 'readonly'}),
-                                           'findings': Textarea(attrs={'class': 'form-control'}),
+                                           'findings': Textarea(attrs={'class': 'form-control',
+                                                                       'rows': 20, 'cols': 90}),
                                        })
 
 ReportFormSet = modelformset_factory(Report, fields=('version', 'completed', 'question'),
@@ -25,4 +26,3 @@ ReportFormSet = modelformset_factory(Report, fields=('version', 'completed', 'qu
                                               'completed': DateInput(attrs={'class': 'form-control', 'type': 'date'}),
                                               'question': Select(attrs={'class': 'form-control'})}
                                      )
-
