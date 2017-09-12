@@ -159,7 +159,7 @@ DATE_INPUT_FORMATS = '%Y/%m/%d'
 
 # STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
-STATICFILESTORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
+STATICFILESTORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 WSGI_APPLICATION = 'mysite.wsgi.application'
 
