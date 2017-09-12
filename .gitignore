@@ -103,3 +103,5 @@ media/
 /themes/themes/
 /themes/etc/
 /static/
+/themes/static/themes/css/
+/themes/static/themes/js/
