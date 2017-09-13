@@ -20,8 +20,7 @@
   },
   "homepage": "https://github.com/pmutale/www.mutale.nl#readme",
   "devDependencies": {
-    "underscore": "^1.8.3",
-    "foreman": "2.0.0"
+    "underscore": "^1.8.3"
   },
   "dependencies": {
     "bootstrap": "^4.0.0-alpha.6",
@@ -33,9 +32,5 @@
     "popper.js": "^1.12.5",
     "tether": "^1.4.0",
     "underscore": "^1.8.3"
-  },
-  "engines": {
-    "node": "7.10.0",
-    "npm": "5.4.1"
   }
 }
