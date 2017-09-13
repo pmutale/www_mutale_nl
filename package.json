@@ -23,6 +23,7 @@
   },
   "dependencies": {
     "bootstrap": "^4.0.0-alpha.6",
+    "foreman": "2.0.0",
     "browser-sync": "^2.18.13",
     "gulp": "^3.9.1",
     "gulp-sass": "^3.1.0",
@@ -30,5 +31,9 @@
     "jquery-countdown": "^2.2.0",
     "popper.js": "^1.12.5",
     "tether": "^1.4.0"
+  },
+  "engines": {
+    "node": "7.10.0",
+    "npm": "5.4.1"
   }
 }
