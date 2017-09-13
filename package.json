@@ -5,7 +5,7 @@
   "main": "./themes/gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npm install --production",
+    "start": "npm install --production && npm install bootstrap@4.0.0-alpha.6",
     "postinstall": "gulp production && python manage.py collectstatic -v0 --noinput"
   },
   "repository": {
@@ -23,8 +23,8 @@
   },
   "dependencies": {
     "bootstrap": "^4.0.0-alpha.6",
-    "foreman": "2.0.0",
     "browser-sync": "^2.18.13",
+    "foreman": "2.0.0",
     "gulp": "^3.9.1",
     "gulp-sass": "^3.1.0",
     "jquery": "^3.2.1",

@@ -5,6 +5,7 @@ var sass        = require('gulp-sass');
 
 // Define default destination folder
 var dest = 'static/themes';
+var dest_themes = 'themes/static/themes';
 
 // Compile sass into CSS & auto-inject into browsers
 gulp.task('bootstrap-css', function() {
@@ -17,7 +18,8 @@ gulp.task('bootstrap-css', function() {
         ]
     )
         .pipe(sass())
-        .pipe(gulp.dest(dest + "/css/bootstrap"))
+        // .pipe(gulp.dest(dest + "/css/bootstrap"))
+        .pipe(gulp.dest(dest_themes + "/css/bootstrap"))
         .pipe(browserSync.stream());
 });
 
@@ -32,7 +34,8 @@ gulp.task('bootstrap-js', function() {
             'node_modules/popper.js/dist/umd/popper.min.js',
             'node_modules/jquery-countdown/dist/jquery.countdown.js'
         ])
-        .pipe(gulp.dest(dest + "/js/bootsrap"))
+        // .pipe(gulp.dest(dest + "/js/bootsrap"))
+        .pipe(gulp.dest(dest_themes + "/js/bootsrap"))
         .pipe(browserSync.stream());
 });
 

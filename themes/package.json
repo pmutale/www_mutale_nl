@@ -6,8 +6,7 @@
   "scripts": {
     "start": "npm install",
     "test": "echo \"Error: ---> No test specified \" && exit 1",
-    "preinstall": "npm install",
-    "postinstall": "gulp production"
+    "postinstall": "gulp"
   },
   "repository": {
     "type": "git",
