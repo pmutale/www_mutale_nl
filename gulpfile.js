@@ -5,6 +5,7 @@ var sass        = require('gulp-sass');
 
 // Define default destination folder
 var dest = 'static/themes';
+var dest_local = 'themes/static/themes';
 
 // Compile sass into CSS & auto-inject into browsers
 gulp.task('bootstrap-css', function() {
@@ -18,6 +19,7 @@ gulp.task('bootstrap-css', function() {
     )
         .pipe(sass())
         .pipe(gulp.dest(dest + "/css/bootstrap"))
+        .pipe(gulp.dest(dest_local + "/css/bootstrap"))
         .pipe(browserSync.stream());
 });
 
@@ -33,6 +35,7 @@ gulp.task('bootstrap-js', function() {
             'node_modules/jquery-countdown/dist/jquery.countdown.js'
         ])
         .pipe(gulp.dest(dest + "/js/bootsrap"))
+        .pipe(gulp.dest(dest_local + "/js/bootsrap"))
         .pipe(browserSync.stream());
 });
 

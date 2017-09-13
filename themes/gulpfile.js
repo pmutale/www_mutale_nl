@@ -19,6 +19,19 @@ gulp.task('bootstrap-css', function() {
     )
         .pipe(sass())
         .pipe(gulp.dest(dest + "/css/bootstrap"))
+        .pipe(browserSync.stream());
+});
+
+gulp.task('bootstrap-css-local', function() {
+    return gulp.src(
+        [
+            'node_modules/bootstrap/scss/bootstrap.scss',
+            'static/themes/scss/*.scss',
+            'static/themes/default/*.scss',
+            dest +'/scss/*.scss'
+        ]
+    )
+        .pipe(sass())
         .pipe(gulp.dest(dest_themes + "/css/bootstrap"))
         .pipe(browserSync.stream());
 });
@@ -35,6 +48,19 @@ gulp.task('bootstrap-js', function() {
             'node_modules/jquery-countdown/dist/jquery.countdown.js'
         ])
         .pipe(gulp.dest(dest + "/js/bootsrap"))
+        .pipe(browserSync.stream());
+});
+
+gulp.task('bootstrap-js-local', function() {
+    return gulp.src(
+        [
+            'node_modules/bootstrap/dist/js/bootstrap.min.js',
+            'node_modules/jquery/dist/jquery.slim.min.js',
+            'node_modules/jquery/dist/jquery.min.js',
+            'node_modules/tether/dist/js/tether.min.js',
+            'node_modules/popper.js/dist/umd/popper.min.js',
+            'node_modules/jquery-countdown/dist/jquery.countdown.js'
+        ])
         .pipe(gulp.dest(dest_themes + "/js/bootsrap"))
         .pipe(browserSync.stream());
 });
@@ -49,7 +75,7 @@ gulp.task('images', function(){
 });
 
 // Static Server + watching scss/html files
-gulp.task('serve', ['bootstrap-css', 'images'], function() {
+gulp.task('serve', ['bootstrap-css', 'bootstrap-css-local', 'images'], function() {
 
     browserSync.init({
         server: './' + dest + '/scss'
@@ -66,5 +92,5 @@ gulp.task('serve', ['bootstrap-css', 'images'], function() {
     gulp.watch("./templates/*.html").on('change', browserSync.reload);
 });
 
-gulp.task('default', ['bootstrap-js','serve']);
-gulp.task('production', ['bootstrap-js','bootstrap-css', 'images']);
+gulp.task('default', ['bootstrap-js', 'bootstrap-js-local','serve']);
+gulp.task('production', ['bootstrap-js','bootstrap-css', 'bootstrap-js-local','bootstrap-css-local', 'images']);
