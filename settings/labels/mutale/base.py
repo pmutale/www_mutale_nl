@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
 from settings.core import *
-import psycopg2
-import urlparse
 import dj_database_url
 from django.utils.translation import ugettext_lazy as _
 
@@ -134,13 +132,13 @@ CKEDITOR_UPLOAD_PATH = 'content/ckeditor/uploads'
 
 CMS_PLACEHOLDER_CONF = {}
 
-DATABASE_URL = 'postgres://oogcsuzgfwhqbc:0da4b0d51b2f508e4c00308e3c583c2dd9999b6b439a5501dcd643602b455167@ec2-54' \
-               '-247-92-185.eu-west-1.compute.amazonaws.com:5432/dmtkic08buj90'
-
-DATABASES = {
-    'default':
-        dj_database_url.config(default=DATABASE_URL)
-}
+# DATABASE_URL = 'postgres://oogcsuzgfwhqbc:0da4b0d51b2f508e4c00308e3c583c2dd9999b6b439a5501dcd643602b455167@ec2-54' \
+#                '-247-92-185.eu-west-1.compute.amazonaws.com:5432/dmtkic08buj90'
+#
+# DATABASES = {
+#     'default':
+#         dj_database_url.config(default=DATABASE_URL)
+# }
 
 MIGRATION_MODULES = {
 

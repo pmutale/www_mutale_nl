@@ -14,7 +14,7 @@ class Project(models.Model):
     start_implementation = models.DateField(null=True, blank=True)
     end_implementation = models.DateField(null=True, blank=True)
 
-    def __unicode__(self):
+    def __str__(self):
         return '{} in {}'.format(self.name, self.location)
 
 
@@ -24,7 +24,7 @@ class ContactPerson(models.Model):
     email = models.EmailField(max_length=128, null=True, blank=True)
     project = models.ForeignKey('Project', on_delete=models.CASCADE, null=True, related_name='projects_contact')
 
-    def __unicode__(self):
+    def __str__(self):
         return '{} - {}'.format(self.name, self.email)
 
 
@@ -41,7 +41,7 @@ class Report(models.Model):
             ('can_edit_report', 'Can edit Report')
         )
 
-    def __unicode__(self):
+    def __str__(self):
         return '{} completed on {}'.format(self.version, self.completed)
 
 
@@ -57,15 +57,14 @@ class Question(models.Model):
             ('can_edit_question', 'Can edit Question')
         )
 
-    def __unicode__(self):
+    def __str__(self):
         return '{} for {}'.format(self.number, self.project)
-
 
 
 class Stick2UgandaPlugin(CMSPlugin):
     info = RichTextField(null=True, blank=True)
     intro_small = models.CharField(max_length=128, null=True, blank=True)
 
-    def __unicode__(self):
+    def __str__(self):
         return self.stick2uganda.name
 
