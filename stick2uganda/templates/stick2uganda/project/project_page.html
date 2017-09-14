@@ -58,7 +58,7 @@
                 <ol class="hidden"></ol>
                 <p class="card-text">
                     {% if report.question.findings %}
-                        {{ report.question.findings }}
+                        {{ report.question.findings|safe }}
                     {% else %}
                         <span class="alert alert-info"> {% trans 'There are no findings yet' %}</span>
                     {% endif %}
