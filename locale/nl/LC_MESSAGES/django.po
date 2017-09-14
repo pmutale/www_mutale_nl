@@ -1,0 +1,233 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-09-14 16:27+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: mysite/templates/base.html:23
+#: stick2uganda/templates/stick2uganda/base.html:9
+msgid "Welcome"
+msgstr "Welkom"
+
+#: mysite/templates/themes/page_components/navbar.html:5
+msgid "Start"
+msgstr "Begin hier"
+
+#: registration/templates/registration/login.html:11
+msgid "Your username and password didn't match. Please try again."
+msgstr "Uw gebruikersnaam en wachtwoord komen niet overeen. Probeer het opnieuw!"
+
+#: registration/templates/registration/login.html:22
+msgid "Your account doesn't have access to this page. To proceed please login with an account that has access."
+msgstr "Uw account heeft geen toegang tot deze pagina. Om verder te gaan, log in met een account dat wel toegang heeft"
+
+#: registration/templates/registration/login.html:29
+msgid "Please login to see this page."
+msgstr "Log in om deze pagina te kunnen bekijken."
+
+#: registration/templates/registration/login.html:47
+msgid "Log in"
+msgstr "Inlogen"
+
+#: stick2uganda/templates/stick2uganda/addfindings.html:20
+#: stick2uganda/templates/stick2uganda/addquestion.html:20
+#: stick2uganda/templates/stick2uganda/navbar/navbar.html:15
+msgid "Add Reports"
+msgstr "Rapporten toevoegen"
+
+#: stick2uganda/templates/stick2uganda/addreport.html:25
+#: stick2uganda/templates/stick2uganda/addreportsuccessful.html:6
+msgid "Aww yeah, you successfully filled this question"
+msgstr "Aww ja, je hebt deze vraag succesvol ingevuld!"
+
+#: stick2uganda/templates/stick2uganda/addreport.html:26
+#: stick2uganda/templates/stick2uganda/addreportsuccessful.html:7
+msgid "Whenever you need to, be sure to use always look at you grammar"
+msgstr ""
+
+#: stick2uganda/templates/stick2uganda/addreport.html:45
+msgid "Add Report"
+msgstr ""
+
+#: stick2uganda/templates/stick2uganda/index.html:3
+msgid "Stick 2 Uganda!"
+msgstr "Stick2Uganda"
+
+#: stick2uganda/templates/stick2uganda/navbar/navbar.html:8
+msgid "Projects"
+msgstr "Projecten"
+
+#: stick2uganda/templates/stick2uganda/navbar/navbar.html:12
+msgid "Add Findings"
+msgstr "Bevindingen toevoegen"
+
+#: stick2uganda/templates/stick2uganda/project.html:8
+#: stick2uganda/templates/stick2uganda/project/project_page.html:36
+msgid "Project"
+msgstr "Project"
+
+#: stick2uganda/templates/stick2uganda/project.html:10
+#, python-format
+msgid ""
+"\n"
+"                        Report: %(num_reports)s\n"
+"                    "
+msgid_plural ""
+"\n"
+"                        Reports: %(num_reports)s\n"
+"                    "
+msgstr[0] ""
+"\n"
+" Rapport: %(num_reports)s\n"
+" "
+msgstr[1] ""
+"\n"
+" Rapporten: %(num_reports)s\n"
+" "
+
+#: stick2uganda/templates/stick2uganda/project.html:26
+#, python-format
+msgid ""
+"\n"
+"                        This project has <strong> only %(num_contacts)s </strong> contact\n"
+"                    "
+msgid_plural ""
+"\n"
+"                        There are <strong> %(num_contacts)s </strong> contacts for this project\n"
+"                    "
+msgstr[0] ""
+"\n"
+" Dit project heeft er slechts  %(num_contacts)s </strong> contact\n"
+"  "
+msgstr[1] ""
+"\n"
+" Er zijn <strong> %(num_contacts)s </strong> contacten voor deze project\n"
+" "
+
+#: stick2uganda/templates/stick2uganda/project/project_page.html:21
+msgid "Contacts"
+msgstr "Contacten"
+
+#: stick2uganda/templates/stick2uganda/project/project_page.html:52
+msgid "Reports"
+msgstr "Rapporten"
+
+#: stick2uganda/templates/stick2uganda/project/project_page.html:63
+msgid "There are no findings yet"
+msgstr "Er zijn helaas nog geen bevindingen"
+
+#: stick2uganda/templates/stick2uganda/project/project_page.html:67
+msgid "Reported on"
+msgstr "Gerapporteerd op"
+
+#: stick2uganda/templates/stick2uganda/project/project_page.html:72
+msgid "Yet to be reported"
+msgstr "Nog te melden"
+
+#: stick2uganda/templates/stick2uganda/project/project_page.html:81
+#, python-format
+msgid ""
+"\n"
+"                There is <strong>only 1</strong> report available\n"
+"            "
+msgid_plural ""
+"\n"
+"                There are <strong>%(num_reports)s</strong> reports available\n"
+"            "
+msgstr[0] ""
+"\n"
+"Er is slechts maar <strong>een</strong> rapport beschickbaar\n"
+" "
+msgstr[1] ""
+"\n"
+"Er zijn <strong>%(num_reports)s</strong> rapportenbeschikbaar\n"
+" "
+
+#: themes/templates/themes/email/contactform.html:12
+msgid "Dear Webmaster"
+msgstr "Dag Webmaster"
+
+#: themes/templates/themes/email/contactform.html:13
+msgid "The following persons would like you to keep them updated on the current situation of the website"
+msgstr ""
+
+#: themes/templates/themes/email/contactform.html:17
+msgid "Email"
+msgstr ""
+
+#: themes/templates/themes/email/contactform.html:24
+msgid "Yours faithfuly"
+msgstr ""
+
+#: themes/templates/themes/email/contactform.html:25
+msgid "Website Correspondent - www.mutale.nl"
+msgstr ""
+
+#: themes/templates/themes/error-pages/404.html:6
+#: themes/templates/themes/error-pages/500.html:6
+msgid "Aww, YACK!!!"
+msgstr "Helaas!!"
+
+#: themes/templates/themes/error-pages/404.html:7
+msgid "The page you are looking for is not available."
+msgstr "De pagina die u zoekt is momenteel niet beschikbaar."
+
+#: themes/templates/themes/error-pages/404.html:10
+#: themes/templates/themes/error-pages/500.html:10
+msgid "Go to the home project page?"
+msgstr "Naar de hoofd project pagina?"
+
+#: themes/templates/themes/error-pages/404.html:11
+#: themes/templates/themes/error-pages/500.html:11
+msgid "Our Projects"
+msgstr "Onze Projecten"
+
+#: themes/templates/themes/error-pages/500.html:7
+msgid "Something is terribly wrong. You can't go forward on this trail."
+msgstr "Er gaat iets verschrikkelijk mis. Probeer later nog eens."
+
+#: themes/templates/themes/page_components/head.html:5
+msgid "Welcome to Familie Mutale website"
+msgstr "Welkom op Familie Mutale website"
+
+#: themes/templates/themes/partials/coming_soon.html:9
+msgid "Thanks for your contact"
+msgstr ""
+
+#: themes/templates/themes/partials/coming_soon.html:10
+msgid "You are in - An update will be coming your way "
+msgstr ""
+
+#: themes/templates/themes/partials/coming_soon.html:21
+msgid "Submit Details"
+msgstr ""
+
+#: themes/templates/themes/partials/contact.html:5
+msgid "Let's Get In Touch!"
+msgstr ""
+
+#: venv/lib/python2.7/site-packages/menus/templates/menu/language_chooser.html:6
+msgid "Change to language:"
+msgstr "Wijzigen naar taal:"
+
+#: venv/lib/python2.7/site-packages/polymorphic/templates/admin/polymorphic/edit_inline/stacked.html:17
+msgid "Change"
+msgstr "Wijzigen"
+
+#: venv/lib/python2.7/site-packages/polymorphic/templates/admin/polymorphic/edit_inline/stacked.html:19
+msgid "View on site"
+msgstr "Bekijk op de site"

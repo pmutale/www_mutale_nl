@@ -107,9 +107,9 @@ INSTALLED_APPS = (
 )
 
 LANGUAGES = (
-    ('en', 'English'),
-    ('nl', 'Nederlands'),
-    ('sw', 'Swahili'),
+    ('en', _('English')),
+    ('nl', _('Nederlands')),
+    ('sw', _('Swahili')),
 )
 
 CMS_LANGUAGES = {
@@ -178,3 +178,7 @@ GOOGLE_ANALYTICS_DOMAIN = 'mutale.nl'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+LOCALE_PATHS = (
+    os.path.join(BASE_DIR, 'locale/'),
+)
