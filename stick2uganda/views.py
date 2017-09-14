@@ -3,6 +3,7 @@ from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.utils.decorators import method_decorator
 
+from stick2uganda.mixins import ActiveOnlyMixin
 from . import forms
 from django.views.generic import ListView, CreateView, UpdateView, DetailView
 from django.contrib.auth.decorators import (login_required,
@@ -24,13 +25,13 @@ def group_required(*group_names):
     return user_passes_test(in_groups)
 
 
-class ProjectView(ListView):
+class ProjectView(ActiveOnlyMixin, ListView):
     """
     Our projects in Uganda
     """
     model = Project
     template_name = 'stick2uganda/project.html'
-    # permission_required = ('report.can_add_report', 'report.can_edit_report', 'can_add_question', 'can_edit_question')
+    permission_required = ('report.can_add_report', 'report.can_edit_report', 'can_add_question', 'can_edit_question')
 
     def get_queryset(self):
         return self.model.objects.all().prefetch_related('projects_report',
@@ -38,7 +39,7 @@ class ProjectView(ListView):
 
 
 @login_required
-@group_required('stick2usganda')
+@group_required('stick2uganda')
 @permission_required('report.can_add_report')
 def addreport(request):
     ReportFormSet = forms.ReportFormSet
@@ -54,7 +55,7 @@ def addreport(request):
 
 
 @login_required
-@group_required('stick2ugsanda')
+@group_required('stick2uganda')
 # @permission_required('question.can_add_question')
 def addquestion(request):
     QuestionFormset = forms.QuestionFormset
@@ -70,7 +71,7 @@ def addquestion(request):
     return render(request, 'stick2uganda/addfindings.html', {'formset': formset})
 
 
-class ProjectPageView(PermissionRequiredMixin, DetailView):
+class ProjectPageView(ActiveOnlyMixin, DetailView):
     template_name = 'stick2uganda/project/project_page.html'
     model = Project
     permission_required = ('report.can_add_report', 'report.can_edit_report', 'can_add_question', 'can_edit_question')
