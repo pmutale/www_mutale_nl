@@ -48,7 +48,7 @@ class Report(models.Model):
 class Question(models.Model):
     number = models.IntegerField(null=True, blank=True, help_text=(_('Use numbers <small>e.g</small> 1, 2 or 3')))
     question = models.CharField(max_length=128, null=True, blank=True)
-    findings = models.TextField(null=True, blank=True)
+    findings = RichTextField(null=True, blank=True)
     project = models.ForeignKey('Project', on_delete=models.CASCADE, null=True, related_name='projects_question')
 
     class Meta:
