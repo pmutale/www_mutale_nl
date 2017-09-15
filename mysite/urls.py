@@ -19,6 +19,11 @@ urlpatterns = [
         {'sitemaps': {'cmspages': CMSSitemap}}),
 ]
 
+if 'rosetta' in settings.INSTALLED_APPS:
+    urlpatterns += i18n_patterns(
+        url(r'^rosetta/', include('rosetta.urls')),
+    )
+
 urlpatterns += i18n_patterns(
     url(r'^admin/', include(admin.site.urls)),  # NOQA
     url(r'^ckeditor/', include('ckeditor_uploader.urls')),
@@ -27,6 +32,7 @@ urlpatterns += i18n_patterns(
     url('^accounts/', include('django.contrib.auth.urls')),
     url(r'^', include('cms.urls'))  # Leave as Last
 )
+
 
 # This is only needed when using runserver.
 if settings.DEBUG:

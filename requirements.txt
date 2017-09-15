@@ -13,6 +13,7 @@ django-filer==1.2.7
 django-formtools==2.0
 django-mptt==0.8.7
 django-polymorphic==1.0.2
+django-rosetta==0.7.13
 django-sekizai==0.10.0
 django-treebeard==4.1.0
 djangocms-admin-style==1.2.6.2
@@ -31,7 +32,6 @@ kombu==4.0.2
 olefile==0.44
 packaging==16.8
 Pillow==4.0.0
-# pkg-resources==0.0.0
 psycopg2==2.7.1
 pyparsing==2.2.0
 pytz==2017.2
