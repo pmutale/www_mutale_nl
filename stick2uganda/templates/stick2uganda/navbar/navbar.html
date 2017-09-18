@@ -8,13 +8,14 @@
   <a class="navbar-brand" href="{% url 'stick2uganda:project' %}"><strong>{% trans 'Projects' %}</strong></a>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
-      <a class="nav-item nav-link{% if '/add-question' in request.path %} active {% endif %}"
-         href="{% url 'stick2uganda:add-question' %}">{% trans 'Add Findings' %}
-          <span class="sr-only">(current)</span></a>
       <a class="nav-item nav-link{% if '/add-report' in request.path %} active {% endif %}"
-         href="{% url 'stick2uganda:add_findings' %}">{% trans 'Add Reports' %}</a>
-      <a class="nav-item nav-link disabled" href="">Tasks</a>
-      <a class="nav-item nav-link disabled" href="#">Disabled</a>
+         href="{% url 'stick2uganda:add_report' %}">{% trans 'Add Report' %}
+          <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link{% if '/add-findings' in request.path %} active {% endif %}"
+         href="{% url 'stick2uganda:add-findings' %}">{% trans 'Add Findings' %}</a>
+      <a class="nav-item nav-link {% if '/add-question' in request.path %} active {% endif %}"
+         href="{% url 'stick2uganda:add_question' %}">Add Question</a>
+      <a class="nav-item nav-link disabled" href="#">Tasks</a>
     </div>
   </div>
 </nav>

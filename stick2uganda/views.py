@@ -30,12 +30,31 @@ class ProjectView(ActiveOnlyMixin, ListView):
     Our projects in Uganda
     """
     model = Project
-    template_name = 'stick2uganda/project.html'
+    template_name = 'stick2uganda/project/project.html'
     permission_required = ('report.can_add_report', 'report.can_edit_report', 'can_add_question', 'can_edit_question')
 
     def get_queryset(self):
         return self.model.objects.all().prefetch_related('projects_report',
                                                          'projects_contact')
+
+
+class AddQuestion(ActiveOnlyMixin, CreateView):
+    model = Question
+    template_name = 'stick2uganda/addquestion.html'
+    form_class = forms.AddQuestionForm
+    success_url = '/project/add-findings'
+    permission_required('report.can_add_report', 'report.can_edit_report', 'can_add_question')
+
+
+class ProjectPageView(ActiveOnlyMixin, DetailView):
+    template_name = 'stick2uganda/project/project_page.html'
+    model = Project
+    permission_required = ('report.can_add_report', 'report.can_edit_report', 'can_add_question', 'can_edit_question')
+
+    def get_context_data(self, **kwargs):
+        context = super(ProjectPageView, self).get_context_data(**kwargs)
+        context['project'] = self.model.objects.all()
+        return context
 
 
 @login_required
@@ -51,13 +70,13 @@ def addreport(request):
             # return reverse('stick2uganda:project')
     else:
         formset = ReportFormSet()
-    return render(request, 'stick2uganda/addquestion.html', {'formset': formset})
+    return render(request, 'stick2uganda/addreport.html', {'formset': formset})
 
 
 @login_required
 @group_required('stick2uganda')
 # @permission_required('question.can_add_question')
-def addquestion(request):
+def add_findings(request):
     QuestionFormset = forms.QuestionFormset
     if request.method == 'POST':
         formset = QuestionFormset(request.POST, request.FILES)
@@ -71,12 +90,5 @@ def addquestion(request):
     return render(request, 'stick2uganda/addfindings.html', {'formset': formset})
 
 
-class ProjectPageView(ActiveOnlyMixin, DetailView):
-    template_name = 'stick2uganda/project/project_page.html'
-    model = Project
-    permission_required = ('report.can_add_report', 'report.can_edit_report', 'can_add_question', 'can_edit_question')
 
-    def get_context_data(self, **kwargs):
-        context = super(ProjectPageView, self).get_context_data(**kwargs)
-        context['project'] = self.model.objects.all()
-        return context
+
