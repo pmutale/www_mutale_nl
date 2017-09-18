@@ -104,6 +104,7 @@ INSTALLED_APPS = (
     'mysite',
     'themes',
     'stick2uganda',
+    'rosetta',
 )
 
 LANGUAGES = (
