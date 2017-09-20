@@ -10,7 +10,7 @@ from django.contrib.sitemaps.views import sitemap
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.views.static import serve
 from django.contrib.auth import views as auth_views
-
+from django.conf.urls.static import static
 
 admin.autodiscover()
 
@@ -40,6 +40,9 @@ if settings.DEBUG:
         url(r'^media/(?P<path>.*)$', serve,
             {'document_root': settings.MEDIA_ROOT, 'show_indexes': True}),
         ] + staticfiles_urlpatterns() + urlpatterns
+else:
+    urlpatterns += staticfiles_urlpatterns()
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
-handler404 = 'themes.views.handler404'
-handler500 = 'themes.views.handler500'
+# handler404 = 'themes.views.handler404'
+# handler500 = 'themes.views.handler500'

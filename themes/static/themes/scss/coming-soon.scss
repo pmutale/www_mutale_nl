@@ -21,6 +21,9 @@ body  {
     h3.description > p, h4.page-heading {
       color: white;
       font-size: 2.2rem;
+      @media (max-width: 768px) {
+        font-size: 1.5rem;
+      }
     }
   }
   .description {
@@ -29,7 +32,7 @@ body  {
       color: #0F41B8;
 
       @media (max-width: 425px ) {
-        font-size: x-small;
+        font-size: small;
       }
     }
   }
