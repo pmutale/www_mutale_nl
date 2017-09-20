@@ -15,28 +15,35 @@
     <link href="{% static "themes/css/bootstrap/styles.css" %}" rel="stylesheet">
 </head>
 <body>
-{% cms_toolbar %}
-<div id="tray" class="topbar">
-    <div class="fill"><span class="text text-info"></span></div>
-</div>
-<div class="container">
-    {% block navbar %}
-        <p class="alert alert-info">{% trans 'Welcome' %}</p>
-    {% endblock %}
+<section id="body">
+<div class="overlay"></div>
+    {% cms_toolbar %}
+    <div id="tray" class="topbar">
+        <div class="fill"><span class="text text-info"></span></div>
+    </div>
+    <div class="container">
+        {% block navbar %}{% endblock %}
 
-    <hr>
-    {% block content %}
-        {% placeholder "header" %}
-        {% placeholder "content" %}
-        {% placeholder "footer" %}
-    {% endblock content %}
-</div>
-<script type="application/javascript" src="{% static 'themes/js/bootsrap/popper.min.js' %}"></script>
-<script type="application/javascript" src="{% static 'themes/js/bootsrap/jquery.slim.min.js' %}"></script>
-<script type="application/javascript" src="{% static 'themes/js/bootsrap/jquery.min.js' %}"></script>
-<script type="application/javascript" src="{% static 'themes/js/bootsrap/tether.min.js' %}"></script>
-<script type="application/javascript" src="{% static 'themes/js/bootsrap/jquery.countdown.js' %}"></script>
-<script type="application/javascript" src="{% static 'themes/js/bootsrap/bootstrap.min.js' %}"></script>
-{% render_block "js" %}
+
+        {% block content %}
+            <section class="header container">
+                {% placeholder "header" %}
+            </section>
+            <section class="content container">
+                {% placeholder "content" %}
+            </section>
+            <section class="footer container">
+                {% placeholder "footer" %}
+            </section>
+        {% endblock content %}
+    </div>
+    <script type="application/javascript" src="{% static 'themes/js/bootsrap/popper.min.js' %}"></script>
+    <script type="application/javascript" src="{% static 'themes/js/bootsrap/jquery.slim.min.js' %}"></script>
+    <script type="application/javascript" src="{% static 'themes/js/bootsrap/jquery.min.js' %}"></script>
+    <script type="application/javascript" src="{% static 'themes/js/bootsrap/tether.min.js' %}"></script>
+    <script type="application/javascript" src="{% static 'themes/js/bootsrap/jquery.countdown.js' %}"></script>
+    <script type="application/javascript" src="{% static 'themes/js/bootsrap/bootstrap.min.js' %}"></script>
+    {% render_block "js" %}
+</section>
 </body>
 </html>

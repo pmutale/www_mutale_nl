@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% load sekizai_tags i18n static staticfiles %}
+{% load cms_tags sekizai_tags i18n static %}
 
 {% block navbar %}
     {% include 'stick2uganda/navbar/navbar.html' %}
@@ -14,6 +14,8 @@
             <a href="{% url 'login' %}"> Login </a>
         {% endif %}
     </div>
+
+    <hr>
 {% endblock %}
 
 {% block content %}
