@@ -27,7 +27,6 @@ TEMPLATES = [
         'DIRS': [os.path.join(BASE_DIR, 'mysite', 'templates'), ],
         'OPTIONS': {
             'context_processors': [
-                'mysite.context_processors.google_analytics',
                 'django.contrib.auth.context_processors.auth',
                 'django.template.context_processors.debug',
                 'django.template.context_processors.i18n',
@@ -38,7 +37,10 @@ TEMPLATES = [
                 'django.template.context_processors.csrf',
                 'django.contrib.messages.context_processors.messages',
                 'sekizai.context_processors.sekizai',
-                'cms.context_processors.cms_settings'
+                'cms.context_processors.cms_settings',
+                
+                # Own Processors
+                'mysite.context_processors.google_analytics',
             ],
             'loaders': [
                 'django.template.loaders.filesystem.Loader',
