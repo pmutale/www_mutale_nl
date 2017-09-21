@@ -16,7 +16,7 @@ def google_analytics(request):
     if response.status_code in [500, 400]:
         stop = True
 
-        if not settings.DEBUG and ga_prop_id and stop:
+        if not settings.DEBUG and ga_prop_id:
             return {
                 'GOOGLE_ANALYTICS_PROPERTY_ID': ga_prop_id,
                 'GOOGLE_ANALYTICS_DOMAIN': ga_domain
@@ -25,4 +25,9 @@ def google_analytics(request):
             return {
                 'GOOGLE_ANALYTICS_PROPERTY_ID': 'development',
                 'GOOGLE_ANALYTICS_DOMAIN': 'auto'
+            }
+        elif stop:
+            return {
+                'GOOGLE_ANALYTICS_PROPERTY_ID': 'ErrorPage',
+                'GOOGLE_ANALYTICS_DOMAIN': 'ErrorPage'
             }
