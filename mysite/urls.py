@@ -18,12 +18,13 @@ urlpatterns = [
     url(r'^sitemap\.xml$', sitemap,
         {'sitemaps': {'cmspages': CMSSitemap}}),
 ]
-
+# Rosetta
 if 'rosetta' in settings.INSTALLED_APPS:
     urlpatterns += i18n_patterns(
         url(r'^rosetta/', include('rosetta.urls')),
     )
 
+# Others
 urlpatterns += i18n_patterns(
     url(r'^admin/', include(admin.site.urls)),  # NOQA
     url(r'^ckeditor/', include('ckeditor_uploader.urls')),
@@ -33,16 +34,14 @@ urlpatterns += i18n_patterns(
     url(r'^', include('cms.urls'))  # Leave as Last
 )
 
+# Statics
+urlpatterns += i18n_patterns(
+    url(r'^media/(?P<path>.*)$', serve,
+        {'document_root': settings.MEDIA_ROOT, 'show_indexes': True}),
+) + staticfiles_urlpatterns() + urlpatterns
 
-# This is only needed when using runserver.
-if settings.DEBUG:
-    urlpatterns = [
-        url(r'^media/(?P<path>.*)$', serve,
-            {'document_root': settings.MEDIA_ROOT, 'show_indexes': True}),
-        ] + staticfiles_urlpatterns() + urlpatterns
-else:
-    urlpatterns += staticfiles_urlpatterns()
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+#     urlpatterns += staticfiles_urlpatterns()
+#     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
-# handler404 = 'themes.views.handler404'
-# handler500 = 'themes.views.handler500'
+handler404 = 'themes.views.handler404'
+handler500 = 'themes.views.handler500'

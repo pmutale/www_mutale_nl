@@ -31,8 +31,7 @@ gulp.task('bootstrap-js', function() {
             'node_modules/jquery/dist/jquery.slim.min.js',
             'node_modules/jquery/dist/jquery.min.js',
             'node_modules/tether/dist/js/tether.min.js',
-            'node_modules/popper.js/dist/umd/popper.min.js',
-            'node_modules/jquery-countdown/dist/jquery.countdown.js'
+            'node_modules/popper.js/dist/umd/popper.min.js'
         ])
         .pipe(gulp.dest(dest + "/js/bootsrap"))
         .pipe(gulp.dest(dest_local + "/js/bootsrap"))
