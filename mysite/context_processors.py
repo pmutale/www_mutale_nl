@@ -13,21 +13,18 @@ def google_analytics(request):
 
     response = HttpResponse()
 
-    if response.status_code in [500, 400]:
-        stop = True
-
-        if not settings.DEBUG and ga_prop_id:
-            return {
-                'GOOGLE_ANALYTICS_PROPERTY_ID': ga_prop_id,
-                'GOOGLE_ANALYTICS_DOMAIN': ga_domain
-            }
-        elif settings.DEBUG:
-            return {
-                'GOOGLE_ANALYTICS_PROPERTY_ID': 'development',
-                'GOOGLE_ANALYTICS_DOMAIN': 'auto'
-            }
-        elif stop:
-            return {
-                'GOOGLE_ANALYTICS_PROPERTY_ID': 'ErrorPage',
-                'GOOGLE_ANALYTICS_DOMAIN': 'ErrorPage'
-            }
+    if not settings.DEBUG and ga_prop_id:
+        return {
+            'GOOGLE_ANALYTICS_PROPERTY_ID': ga_prop_id,
+            'GOOGLE_ANALYTICS_DOMAIN': ga_domain
+        }
+    elif settings.DEBUG:
+        return {
+            'GOOGLE_ANALYTICS_PROPERTY_ID': 'development',
+            'GOOGLE_ANALYTICS_DOMAIN': 'auto'
+        }
+    elif response.status_code in [500, 404]:
+        return {
+            'GOOGLE_ANALYTICS_PROPERTY_ID': 0,
+            'GOOGLE_ANALYTICS_DOMAIN': 'ErrorPage'
+        }
