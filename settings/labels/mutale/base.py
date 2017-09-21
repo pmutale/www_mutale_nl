@@ -159,11 +159,11 @@ THUMBNAIL_PROCESSORS = (
 
 DATE_INPUT_FORMATS = '%Y/%m/%d'
 
-#STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+# STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
-# STATICFILESTORAGE = 'django.contrib.staticfiles.storage.ManifestStaticFilesStorage'
+STATICFILESTORAGE = 'django.contrib.staticfiles.storage.ManifestStaticFilesStorage'
 
 WSGI_APPLICATION = 'mysite.wsgi.application'
 
