@@ -8,7 +8,7 @@ def google_analytics(request):
     :param request:
     :return:
     """
-    ga_prop_id = getattr(settings.GOOGLE_ANALYTICS_DOMAIN, 'GOOGLE_ANALYTICS_PROPERTY_ID', False)
+    ga_prop_id = settings.GOOGLE_ANALYTICS_PROPERTY_ID
 
     if not settings.DEBUG:
         return {
