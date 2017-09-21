@@ -2,7 +2,7 @@
 from settings.core import *
 import dj_database_url
 from django.utils.translation import ugettext_lazy as _
-
+from themes import secrets
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
@@ -228,4 +228,8 @@ LOGGING = {
         }
     }
 }
+
+
+CACHES = secrets.get_cache()
+
 
