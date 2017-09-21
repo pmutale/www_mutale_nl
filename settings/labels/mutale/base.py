@@ -159,7 +159,9 @@ THUMBNAIL_PROCESSORS = (
 
 DATE_INPUT_FORMATS = '%Y/%m/%d'
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+#STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 # STATICFILESTORAGE = 'django.contrib.staticfiles.storage.ManifestStaticFilesStorage'
 
@@ -179,7 +181,7 @@ GOOGLE_ANALYTICS_PROPERTY_ID = 'UA-63318042-2'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 LOCALE_PATHS = (
     os.path.join(BASE_DIR, 'locale/'),
