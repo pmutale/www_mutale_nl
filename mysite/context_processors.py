@@ -12,9 +12,9 @@ def google_analytics(request):
 
     if not settings.DEBUG:
         return {
-            'GOOGLE_ANALYTICS_PROPERTY_ID': ga_prop_id,
+            'GOOGLE_TICS_PPT_ID': ga_prop_id,
         }
     else:
         return {
-            'GOOGLE_ANALYTICS_PROPERTY_ID': 0,
+            'GOOGLE_TICS_PPT_ID': 0,
         }
