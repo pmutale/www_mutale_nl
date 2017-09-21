@@ -5,6 +5,8 @@ from themes import secrets
 
 DEBUG = False
 
+ADMINS = [('Peter', 'webmaster@mutale.nl'), ('Peter', 'peter@mutale.nl')]
+
 ALLOWED_HOSTS = ['mutale.herokuapp.com', '127.0.0.1', 'localhost', 'mutale-dev-a.herokuapp.com',
                  'mutale-prd.herokuapp.com', 'stick2uganda.mutale.nl']
 

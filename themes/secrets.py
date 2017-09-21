@@ -1,5 +1,5 @@
 email_settings = {
-    'password': 'COR19911984',
+    'password': 'W%#*4U2Qx943aS6H',
     'user': 'webmaster@mutale.nl',
     'port': 465,
     'host': 'smtp.strato.com',
