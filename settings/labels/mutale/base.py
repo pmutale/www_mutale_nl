@@ -178,7 +178,7 @@ GOOGLE_ANALYTICS_PROPERTY_ID = 'UA-63318042-2'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 LOCALE_PATHS = (
     os.path.join(BASE_DIR, 'locale/'),
