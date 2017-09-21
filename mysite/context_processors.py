@@ -8,23 +8,13 @@ def google_analytics(request):
     :param request:
     :return:
     """
-    ga_prop_id = getattr(settings, 'GOOGLE_ANALYTICS_PROPERTY_ID', False)
-    ga_domain = getattr(settings, 'GOOGLE_ANALYTICS_DOMAIN', False)
+    ga_prop_id = getattr(settings.GOOGLE_ANALYTICS_DOMAIN, 'GOOGLE_ANALYTICS_PROPERTY_ID', False)
 
-    response = HttpResponse()
-
-    if not settings.DEBUG and ga_prop_id:
+    if not settings.DEBUG:
         return {
             'GOOGLE_ANALYTICS_PROPERTY_ID': ga_prop_id,
-            'GOOGLE_ANALYTICS_DOMAIN': ga_domain
         }
-    elif settings.DEBUG:
-        return {
-            'GOOGLE_ANALYTICS_PROPERTY_ID': 'development',
-            'GOOGLE_ANALYTICS_DOMAIN': 'auto'
-        }
-    elif response.status_code in [500, 404]:
+    else:
         return {
             'GOOGLE_ANALYTICS_PROPERTY_ID': 0,
-            'GOOGLE_ANALYTICS_DOMAIN': 'ErrorPage'
         }

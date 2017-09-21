@@ -176,8 +176,6 @@ AUTH_USER_MODEL = 'registration.User'
 
 GOOGLE_ANALYTICS_PROPERTY_ID = 'UA-63318042-2'
 
-GOOGLE_ANALYTICS_DOMAIN = 'mutale.nl'
-
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
