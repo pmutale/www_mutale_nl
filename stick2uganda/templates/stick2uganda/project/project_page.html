@@ -4,7 +4,7 @@
 {% block content %}
     {% thumbnail object.image "1110x425" upscale crop subject_location=object.image.subject_location as img %}
     <div class="card mb-3">
-        <img class="card-img-top img-fluid" src="{{ img.url }}" alt="Card image cap">
+        <img class="card-img-top img-fluid" src="{% if img %}{{ img.url }}" alt="{{ object.name }}{% endif %}">
         <div class="card-block">
             <h4 class="card-title">{{ object.name }}</h4>
             <p class="card-text"> {{ object.project_summary|safe }}</p>
