@@ -171,6 +171,12 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 DEFAULT_FROM_EMAIL = 'webmaster@mutale.nl'
 
+CMSPLUGIN_FILER_IMAGE_STYLE_CHOICES = (
+    ('default', 'Default'),
+    ('boxed', 'Boxed'),
+)
+CMSPLUGIN_FILER_IMAGE_DEFAULT_STYLE = 'boxed'
+
 LOGIN_URL = '/accounts/login/'
 
 LOGIN_REDIRECT_URL = '/project/'

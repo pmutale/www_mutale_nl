@@ -1,6 +1,7 @@
 from __future__ import unicode_literals
 
 from ckeditor.fields import RichTextField
+from filer.fields.image import FilerImageField
 from cms.models import CMSPlugin
 from django.utils.translation import ugettext_lazy as _
 
@@ -9,6 +10,7 @@ from django.db import models
 
 class Project(models.Model):
     name = models.CharField(max_length=128, null=False)
+    image = FilerImageField(null=True, blank=True)
     project_summary = RichTextField(null=True, blank=True)
     location = models.CharField(max_length=128, null=False)
     start_implementation = models.DateField(null=True, blank=True)
@@ -67,4 +69,9 @@ class Stick2UgandaPlugin(CMSPlugin):
 
     def __str__(self):
         return self.stick2uganda.name
+
+
+class S2UImagePlugin(CMSPlugin):
+    image = FilerImageField(blank=True, null=True)
+    title = models.CharField(max_length=128, blank=True, null=True)
 
