@@ -1,0 +1,5 @@
+{% load i18n thumbnail %}
+<div class="project-image">
+    {% thumbnail instance.image "771x251" upscale crop subject_location=instance.image.subject_location as img %}
+    <img src="{{ img.url }}" class="img-fluid" alt="{{ instance.title }}">
+</div>
