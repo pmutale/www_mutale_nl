@@ -136,17 +136,33 @@ CKEDITOR_UPLOAD_PATH = 'content/ckeditor/uploads'
 
 CMS_PLACEHOLDER_CONF = {}
 
-# DATABASE_URL = 'postgres://oogcsuzgfwhqbc:0da4b0d51b2f508e4c00308e3c583c2dd9999b6b439a5501dcd643602b455167@ec2-54' \
-#                '-247-92-185.eu-west-1.compute.amazonaws.com:5432/dmtkic08buj90'
-#
-# DATABASES = {
-#     'default':
-#         dj_database_url.config(default=DATABASE_URL)
-# }
-
 MIGRATION_MODULES = {
 
 }
+
+def read_pgpass(dbname):
+    import os
+    try:
+        pgpass = os.path.join(os.environ['HOME'], '.pgpass')
+        pgpass_lines = open(pgpass).read().split()
+    except IOError:
+        pass
+    else:
+        for match in (dbname, '*'):
+            for line in pgpass_lines:
+                words = line.strip().split(':')
+                if words[2] == match:
+                    return {
+                        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+                        'NAME': dbname,
+                        'USER': words[3],
+                        'PASSWORD': words[4],
+                        'HOST': words[0],
+                    }
+    return {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'var', '%s.db' % dbname),
+    }
 
 # CMS_TOOLBAR_ANONYMOUS_ON = False
 
@@ -156,6 +172,7 @@ THUMBNAIL_PROCESSORS = (
     'filer.thumbnail_processors.scale_and_crop_with_subject_location',
     'easy_thumbnails.processors.filters'
 )
+THUMBNAIL_HIGH_RESOLUTION = True
 
 DATE_INPUT_FORMATS = '%Y/%m/%d'
 

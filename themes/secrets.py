@@ -1,10 +1,23 @@
-email_settings = {
-    'password': 'W%#*4U2Qx943aS6H',
-    'user': 'webmaster@mutale.nl',
-    'port': 465,
-    'host': 'smtp.strato.com',
-    'ssl': True
-}
+def read_mailpass(user):
+    import os
+
+    try:
+        mail = os.path.join(os.environ['HOME'], '.mail')
+        mail_lines = open(mail).read().split()
+    except IOError:
+        pass
+    else:
+        for match in (user, '*'):
+            for line in mail_lines:
+                words = line.strip().split(':')
+                if words[1] == match:
+                    return {
+                        'password': words[0],
+                        'user': user,
+                        'port': words[2],
+                        'host': words[3],
+                        'ssl': words[4],
+                    }
 
 
 def get_cache():

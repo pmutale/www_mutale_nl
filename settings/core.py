@@ -30,6 +30,7 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 # Application definition
+ADMINS = [('Peter', 'webmaster@mutale.nl'), ('Peter', 'peter@mutale.nl')]
 
 ROOT_URLCONF = 'mysite.urls'
 
