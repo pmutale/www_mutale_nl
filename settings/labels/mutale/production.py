@@ -1,7 +1,4 @@
 from settings.labels.mutale.base import *
-import dj_database_url
-
-from themes import secrets
 from themes.secrets import read_mailpass
 
 DEBUG = False

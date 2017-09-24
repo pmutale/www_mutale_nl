@@ -18,6 +18,14 @@ def read_mailpass(user):
                         'host': words[3],
                         'ssl': words[4],
                     }
+    return {
+        'host': 'smtp.strato.com',
+        'user': '',
+        'port': '',
+        'ssl': '',
+        'password': '*******'
+
+    }
 
 
 def get_cache():
