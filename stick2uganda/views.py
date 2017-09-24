@@ -67,7 +67,6 @@ def addreport(request):
         if formset.is_valid():
             formset.save()
             return redirect('/project')
-            # return reverse('stick2uganda:project')
     else:
         formset = ReportFormSet()
     return render(request, 'stick2uganda/addreport.html', {'formset': formset})

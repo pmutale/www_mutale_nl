@@ -51,7 +51,7 @@ class Question(models.Model):
     number = models.IntegerField(null=True, blank=True, help_text=(_('Use numbers <small>e.g</small> 1, 2 or 3')))
     question = models.CharField(max_length=128, null=True, blank=True)
     findings = RichTextField(null=True, blank=True)
-    image = models.ImageField(max_length=128000, null=True, blank=True, upload_to='/project')
+    image = models.ImageField(max_length=128000, null=True, blank=True, upload_to='media/project')
     project = models.ForeignKey('Project', on_delete=models.CASCADE, null=True, related_name='projects_question')
 
     class Meta:

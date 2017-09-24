@@ -64,6 +64,12 @@
                         <span class="alert alert-info"> {% trans 'There are no findings yet' %}</span>
                     {% endif %}
                 </p>
+                <div class="image">
+                    {% if report.question.image %}
+                        {% thumbnail report.question.image '636x251' upscale crop subject_location=report.question.image.subject_location as img %}
+                        <img src="{{ img.url }}" class="img-fluid rounded" alt="Responsive image">
+                    {% endif %}
+                </div>
                 <span class="badge badge-default">
                     {% trans 'Reported on' %}:
                     <cite>
