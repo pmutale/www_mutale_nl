@@ -1,5 +1,5 @@
 from django.forms import ModelForm, Select, Textarea, inlineformset_factory, \
-    TextInput, DateInput, modelformset_factory
+    TextInput, DateInput, modelformset_factory, ImageField
 from stick2uganda.models import Project, Report, Question
 from django.utils.translation import gettext as _
 
@@ -25,7 +25,7 @@ class AddQuestionForm(ModelForm):
         self.fields['project'].empty_label = _('Please Select a Project from the list below')
 
 
-QuestionFormset = modelformset_factory(Question, extra=0, fields=('number', 'project', 'question', 'findings'),
+QuestionFormset = modelformset_factory(Question, extra=0, fields=('number', 'project', 'question', 'findings', 'image'),
                                        widgets={
                                            'number': TextInput(attrs={'class': 'form-control',
                                                                       'readonly': 'readonly'}),

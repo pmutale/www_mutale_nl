@@ -8,7 +8,6 @@ ALLOWED_HOSTS = ['mutale.herokuapp.com', '127.0.0.1', 'localhost', 'mutale-dev-a
 
 DATABASES = {
     'default':
-        # dj_database_url.config(default=DATABASE_URL)
         read_pgpass('dmtkic08buj90')
 }
 email_settings = read_mailpass('webmaster@mutale.nl')
