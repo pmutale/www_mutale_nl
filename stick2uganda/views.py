@@ -1,7 +1,8 @@
 from django.contrib.auth.mixins import PermissionRequiredMixin
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse
 from django.utils.decorators import method_decorator
+from django.views.decorators.cache import cache_page
 
 from stick2uganda.mixins import ActiveOnlyMixin
 from . import forms
@@ -57,37 +58,44 @@ class ProjectPageView(ActiveOnlyMixin, DetailView):
         return context
 
 
+@cache_page(60*15)
 @login_required
 @group_required('stick2uganda')
 @permission_required('report.can_add_report')
 def addreport(request):
     ReportFormSet = forms.ReportFormSet
-    if request.method == 'POST':
-        formset = ReportFormSet(request.POST, request.FILES)
-        if formset.is_valid():
-            formset.save()
-            return redirect('/project')
+    formset = ReportFormSet(request.POST, request.FILES)
+
+    if request.method == 'POST' and formset.is_valid():
+        formset.save()
+        return redirect('/project')
     else:
         formset = ReportFormSet()
-    return render(request, 'stick2uganda/addreport.html', {'formset': formset})
+    return render(request, 'stick2uganda/addreport.html', {'formset': formset,
+                                                           })
 
 
+@cache_page(60*15)
 @login_required
 @group_required('stick2uganda')
 # @permission_required('question.can_add_question')
 def add_findings(request):
     QuestionFormset = forms.QuestionFormset
-    if request.method == 'POST':
-        formset = QuestionFormset(request.POST, request.FILES)
-        if formset.is_valid():
-            formset.save()
-            return redirect('/project')
-            # return reverse('stick2uganda:project')
-
+    formset = QuestionFormset(request.POST, request.FILES)
+    if request.method == 'POST' and formset.is_valid():
+        formset.save()
+        return redirect('/project')
     else:
         formset = QuestionFormset()
-    return render(request, 'stick2uganda/addfindings.html', {'formset': formset})
+    return render(request, 'stick2uganda/addfindings.html', {'formset': formset,
+                                                             'exists': True if formset.queryset else False
+                                                             })
 
 
+def add_findings_detail(request, id):
+    obj = get_object_or_404(Question, id=id)
+    return render(request, 'stick2uganda/addfindings.html', {
+        'object': obj,
+    })
 
 

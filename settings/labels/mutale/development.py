@@ -16,19 +16,30 @@ EMAIL_FILE_PATH = '/email'
 
 DATABASES = {'default': read_pgpass('www_mutale_com'), }
 
-LOGGING['loggers']['django.request'] = {
-        'handlers': ['console', 'mail_admins'],
-        'level': 'DEBUG',
-        'propagate': True,
-        }
-LOGGING['loggers']['django.db.backends'] = {
-        'handlers': ['console'],
-        'level': 'INFO',
-        'propagate': True,
-        }
-LOGGING['loggers'][''] = {
-        'handlers': ['console'],
-        'level': 'INFO',
-        'propagate': True,
-        }
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['console'],
+            'level': os.getenv('DJANGO_LOG_LEVEL', 'INFO'),
+        },
+    },
+}
 
+INTERNAL_IPS = ('127.0.0.1',)
+
+
+def show_toolbar(request):
+    return True
+
+
+DEBUG_TOOLBAR_CONFIG = {
+    "SHOW_TOOLBAR_CALLBACK": show_toolbar,
+    "INTERCEPT_REDIRECTS": False,
+}

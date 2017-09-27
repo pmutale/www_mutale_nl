@@ -60,12 +60,15 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.locale.LocaleMiddleware',
+    'django.middleware.cache.UpdateCacheMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.cache.FetchFromCacheMiddleware',
     'cms.middleware.user.CurrentUserMiddleware',
     'cms.middleware.page.CurrentPageMiddleware',
     'cms.middleware.toolbar.ToolbarMiddleware',
-    'cms.middleware.language.LanguageCookieMiddleware'
+    'cms.middleware.language.LanguageCookieMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware'
 )
 
 INSTALLED_APPS = (
@@ -102,6 +105,8 @@ INSTALLED_APPS = (
     'djangocms_googlemap',
     'djangocms_video',
     'mptt',
+    'hvad',
+    'debug_toolbar',
 
     #  Apps
     'mysite',
@@ -255,4 +260,9 @@ LOGGING = {
 
 CACHES = secrets.get_cache()
 
+CACHE_MIDDLEWARE_KEY_PREFIX = 'www_mutale_cache'
+
+CACHE_MIDDLEWARE_SECONDS = 600
+
+CACHE_MIDDLEWARE_ALIAS = 'default'
 
