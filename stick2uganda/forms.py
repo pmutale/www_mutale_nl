@@ -1,5 +1,5 @@
 from django.forms import ModelForm, Select, Textarea, inlineformset_factory, \
-    TextInput, DateInput, modelformset_factory, ImageField
+    TextInput, DateInput, modelformset_factory, ImageField, BaseModelFormSet
 from stick2uganda.models import Project, Report, Question
 from django.utils.translation import gettext as _
 
@@ -25,7 +25,16 @@ class AddQuestionForm(ModelForm):
         self.fields['project'].empty_label = _('Please Select a Project from the list below')
 
 
-QuestionFormset = modelformset_factory(Question, extra=0, fields=('number', 'project', 'question', 'findings', 'image'),
+class BaseQuestionFormset(BaseModelFormSet):
+    def __init__(self, *args, **kwargs):
+        super(BaseQuestionFormset, self).__init__(*args, **kwargs)
+        self.queryset = Question.objects.select_related('project')\
+            .filter(findings__contains='Add Your Findings here')
+
+
+QuestionFormset = modelformset_factory(Question,
+                                       fields=('number', 'project', 'question', 'findings', 'image'),
+                                       extra=0,
                                        widgets={
                                            'number': TextInput(attrs={'class': 'form-control',
                                                                       'readonly': 'readonly'}),
@@ -34,11 +43,24 @@ QuestionFormset = modelformset_factory(Question, extra=0, fields=('number', 'pro
                                            'project': Select(attrs={'class': 'form-control-static',
                                                                     'readonly': 'readonly'}),
                                            'findings': Textarea(attrs={'class': 'form-control'}),
-                                       })
+                                       },
+                                       formset=BaseQuestionFormset)
 
-ReportFormSet = modelformset_factory(Report, fields=('version', 'completed', 'question'),
+
+class BaseReportFormset(BaseModelFormSet):
+    def __init__(self, *args, **kwargs):
+        super(BaseReportFormset, self).__init__(*args, **kwargs)
+        self.queryset = Report.objects.filter(version__isnull=True, question__isnull=True).\
+            select_related('question')
+
+
+ReportFormSet = modelformset_factory(Report,
+                                     fields=('version', 'completed', 'question'),
+                                     extra=1,
                                      widgets={'version': TextInput(attrs={'class': 'form-control'}),
                                               'completed': DateInput(attrs={'class': 'form-control', 'type': 'date'}),
-                                              'question': Select(attrs={'class': 'form-control'})}
+                                              'question': Select(attrs={'class': 'form-control'})
+                                              },
+                                     formset=BaseReportFormset
                                      )
 

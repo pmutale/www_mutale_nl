@@ -2,24 +2,38 @@
 {% load sekizai_tags cms_tags i18n static %}
 
 {% block content %}
-    <form method="post" action="">{% csrf_token %}
-        {{ formset.management_form }}
-        {% for form in formset %}
-            {{ form.id }}
-            {% for field in form.visible_fields %}
-                <div class="form-group row">
-                    <label for="{{ field.id_for_label }}" class="col-sm-2 col-form-label">{{ field.label_tag }}</label>
-                    <div class="col-sm-10">
-                        {{ field }}
+    {% if exists %}
+        <form method="post" action="">{% csrf_token %}
+            >> {% render_placeholder object.add_findings_placeholder %} {{ object.pk }}
+            {{ formset.management_form }}
+            {% for form in formset %}
+                {{ form.id }}
+                {% for field in form.visible_fields %}
+                    <div class="form-group row">
+                        <label for="{{ field.id_for_label }}" class="col-sm-2 col-form-label">{{ field.label_tag }}</label>
+                        <div class="col-sm-10">
+                            {{ field }}
+                            {% if field.help_text %}
+                                <span class="text-muted">
+                            {{ field.help_text|safe }}
+                        </span>
+                            {% endif %}
+                        </div>
                     </div>
-                </div>
+                {% endfor %}
             {% endfor %}
-        {% endfor %}
-        <div class="form-group row">
-            <div class="offset-sm-2 col-sm-10">
-                <button type="submit" class="btn btn-primary">{% trans 'Add Reports' %}</button>
+            <div class="form-group row">
+                <div class="offset-sm-2 col-sm-10">
+                    <button type="submit" class="btn btn-primary">{% trans 'Add Findings' %}</button>
+                </div>
             </div>
+        </form>
+        <hr>
+    {% else %}
+        <div class="alert alert-success" role="alert">
+            <strong>There are not findings to add yet!</strong>
+            Visit <a href="{% url 'stick2uganda:add_question' %}" class="alert-link">here</a>,
+            to add questions to be able to add a finding
         </div>
-    </form>
-    <hr>
+    {% endif %}
 {% endblock %}

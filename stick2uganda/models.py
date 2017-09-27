@@ -2,7 +2,7 @@ from __future__ import unicode_literals
 
 from ckeditor.fields import RichTextField
 from filer.fields.image import FilerImageField
-from cms.models import CMSPlugin
+from cms.models import CMSPlugin, PlaceholderField
 from django.utils.translation import ugettext_lazy as _
 
 from django.db import models
@@ -48,11 +48,26 @@ class Report(models.Model):
 
 
 class Question(models.Model):
+    def composition():
+        outline = {
+            'findings': u'<p>Add Your Findings here<p><p>Identify Your Audience here<p>'
+                        u'<p>Add Your Findings Description here<p><p>Add Your Conclusion and Recommendations here<p>',
+                       }
+        return outline
+
+    # f_default = composition()
+    # defaults = f_default.values()
+
     number = models.IntegerField(null=True, blank=True, help_text=(_('Use numbers <small>e.g</small> 1, 2 or 3')))
     question = models.CharField(max_length=128, null=True, blank=True)
-    findings = RichTextField(null=True, blank=True)
+    findings = RichTextField(null=True, blank=True,
+                             default=composition()['findings'],
+                             help_text=_(
+                                 'Do not delete the tags <pre><code>&lt;p&gt; ... &lt;p&gt;</code></pre>'
+                             ))
     image = models.ImageField(max_length=128000, null=True, blank=True, upload_to='media/project')
     project = models.ForeignKey('Project', on_delete=models.CASCADE, null=True, related_name='projects_question')
+    add_findings_placeholder = PlaceholderField(slotname='add_findings')
 
     class Meta:
         permissions = (

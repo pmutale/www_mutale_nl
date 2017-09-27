@@ -26,6 +26,9 @@ djangocms-snippet==1.9.2
 djangocms-style==2.0.2
 djangocms-text-ckeditor==3.4.0
 djangocms-video==2.0.3
+django-hvad==1.8.0
+django-debug-toolbar==1.8
+django-pylibmc==0.6.1
 easy-thumbnails==2.3
 html5lib==0.9999999
 kombu==4.0.2
@@ -42,6 +45,6 @@ vine==1.1.3
 whitenoise==3.3.0
 dnspython==1.15.0
 pylibmc==1.5.2
-django-pylibmc==0.6.1
+sqlparse==0.2.3
 
 git+https://github.com/benoitc/gunicorn.git#egg=gunicorn

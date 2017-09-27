@@ -45,3 +45,9 @@ urlpatterns += i18n_patterns(
 
 handler404 = 'themes.views.handler404'
 handler500 = 'themes.views.handler500'
+
+if settings.DEBUG:
+    import debug_toolbar
+    urlpatterns = [
+        url(r'^__debug__/', include(debug_toolbar.urls)),
+    ] + urlpatterns
