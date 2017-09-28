@@ -106,3 +106,5 @@ media/
 /themes/static/themes/css/
 /themes/static/themes/js/
 /pgdumps/
+/.mail
+/.pgpass
