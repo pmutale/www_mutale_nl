@@ -17,12 +17,12 @@ class Stick2UgandaProjectPlugin(CMSPluginBase):
         return context
 
 
-class ProjectImagePlugin(CMSPluginBase):
-    model = models.S2UImagePlugin
-    name = _('Add Project Image')
-    render_template = 'stick2uganda/project/p_image.html'
-
-
-plugin_pool.register_plugin(ProjectImagePlugin)
+# class ProjectImagePlugin(CMSPluginBase):
+    # model = models.S2UImagePlugin
+    # name = _('Add Project Image')
+    # render_template = 'stick2uganda/project/p_image.html'
+#
+#
+# plugin_pool.register_plugin(ProjectImagePlugin)
 plugin_pool.register_plugin(Stick2UgandaProjectPlugin)
 
