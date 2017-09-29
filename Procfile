@@ -1,2 +1,2 @@
-web: waitress-serve --port=$PORT mysite.wsgi
-release: python manage.py migrate --fake
+web: gunicorn mysite.wsgi --preload --log-file -
+release: python manage.py migrate
