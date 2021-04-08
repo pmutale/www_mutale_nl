@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/pmutale/www.mutale.nl#readme",
   "devDependencies": {
-    "underscore": "^1.8.3"
+    "underscore": "^1.12.1"
   },
   "dependencies": {
     "bootstrap": "^4.0.0-alpha.6",
@@ -30,6 +30,6 @@
     "jquery-countdown": "^2.2.0",
     "popper.js": "^1.12.5",
     "tether": "^1.4.0",
-    "underscore": "^1.8.3"
+    "underscore": "^1.12.1"
   }
 }
