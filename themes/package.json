@@ -28,7 +28,7 @@
     "gulp-sass": "^3.1.0",
     "jquery": "^3.2.1",
     "jquery-countdown": "^2.2.0",
-    "popper.js": "^1.12.5",
+    "popper.js": "^1.16.1",
     "tether": "^1.4.0",
     "underscore": "^1.8.3"
   }
