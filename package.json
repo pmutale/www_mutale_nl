@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "npm install --production && npm install bootstrap@4.0.0-alpha.6",
-    "postinstall": "npm install bootstrap@4.0.0-alpha.6 && gulp production"
+    "postinstall": "npm install bootstrap@4.0.0-alpha.6 && gulp production",
+    "prepublish": "npm run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -25,15 +27,17 @@
     "bootstrap": "^4.0.0-alpha.6",
     "browser-sync": "^2.18.13",
     "foreman": "2.0.0",
-    "gulp": "^3.9.1",
-    "gulp-sass": "^3.1.0",
+    "gulp": "^4.0.0",
+    "gulp-sass": "^5.0.0",
     "jquery": "^3.2.1",
     "jquery-countdown": "^2.2.0",
     "popper.js": "^1.12.5",
-    "tether": "^1.4.0"
+    "tether": "^1.4.0",
+    "@snyk/protect": "latest"
   },
   "engines": {
     "node": "7.10.0",
     "npm": "5.4.1"
-  }
+  },
+  "snyk": true
 }
