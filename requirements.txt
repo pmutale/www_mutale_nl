@@ -12,7 +12,7 @@ django-ckeditor==5.3.0
 django-classy-tags==0.8.0
 django-cms==3.4.5
 django-debug-toolbar==1.8
-django-filer==1.2.7
+django-filer==3.0.0rc1
 django-formtools==2.1
 django-hvad==1.8.0
 django-js-asset==1.0.0
