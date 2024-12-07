@@ -35,7 +35,7 @@ djangocms-video==2.0.3
 dnspython==1.15.0
 easy-thumbnails==2.5
 gunicorn==19.7.1
-html5lib==0.9999999
+html5lib==0.999999999
 idna==2.6
 kombu==4.0.2
 microsofttranslator==0.8
